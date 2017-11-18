@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>定时器</title>
+    <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css">
+    <style media="screen">
+      .container  div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid gray;
+        margin-top: 20px;
+        text-align: center;
+        line-height: 100px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+    <input id="btn" class="btn btn-info btn-lg" type="button" name="" value="按钮">
+    <div id="d1">0</div> 计数
+    <div id="d2">0</div> 随机数
+    <div id="d3">0</div> 年
+    <div id="d4">0</div> 月
+    <div id="d5">0</div> 星期
+    <div id="d6">0</div> 日
+    <div id="d7">0</div> 小时
+    <div id="d8">0</div> 分钟
+    <div id="d9">0</div> 秒
+    </div>
+
+    <script src="./js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    $(function(){
+
+      $("#btn").click(function(){
+        // 到5 取消定时器
+        var i = 0, j = 0, k = 0;
+        var timer = setInterval(function(){
+          i++;
+          document.getElementById("d1").innerText = i;
+          // if (i == 5) {
+          //   clearInterval(timer);
+          //   i = 0;
+          // }
+
+        },1000);
+      });
+
+      var d = new Date();
+      document.getElementById("d2").innerText = Math.floor(Math.random()*100);
+      document.getElementById("d3").innerText = d.getFullYear();
+      document.getElementById("d4").innerText = d.getMonth() + 1;
+      document.getElementById("d5").innerText = d.getDay();
+      document.getElementById("d6").innerText = d.getDate();
+      document.getElementById("d7").innerText = d.getHours();
+      document.getElementById("d8").innerText = d.getMinutes();
+      document.getElementById("d9").innerText = d.getSeconds();
+
+    });
+    </script>
+
+  </body>
+</html>

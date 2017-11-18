@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.item {
+  margin: 50px auto;
+  position: absolute;
+  top: 0px;
+  left: 600px;
+}
+
+.item span {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.item .item-dash {
+  width: 50%;
+  border-top: 1px dashed #ccc;
+  border-bottom: 1px dashed #ccc;
+  margin-top: 20px;
+  text-indent: 2em;
+}
+
+.item .item-center span {
+  font-weight: bold;
+  font-size: 16px;
+  color: blue;
+}
+.item .item-center {
+  width: 50%;
+  line-height: 2;
+  text-indent: 2em;
+}
