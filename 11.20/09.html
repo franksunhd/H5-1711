@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>星座</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #xz {
+        width: 200px;
+        height: 50px;
+      }
+
+      .default-star,
+      .gold-star{
+        width: 80px;
+        height: 15px;
+        background: url("./images/yunshi.png") no-repeat;
+      }
+
+      .default-star {
+        background-position: 0px 2px;
+      }
+
+      .gold-star {
+        background-position: left bottom;
+      }
+
+      #desc {
+        width: 200px;
+        height: 300px;
+        border: 1px solid #ccc;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <select id="xz">
+      <option value="0" selected>白羊座</option>
+      <option value="1">摩羯座</option>
+      <option value="2">双子座</option>
+      <option value="3">双鱼座</option>
+      <option value="4">金牛座</option>
+      <option value="5">狮子座</option>
+      <option value="6">水平座</option>
+      <option value="7">射手座</option>
+    </select>
+
+    <div>
+      <h2>今日运势</h2>
+      <div class="default-star">
+        <div class="gold-star"></div>
+      </div>
+
+      <div id="desc"></div>
+    </div>
+
+
+    <script src="./js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    var sl = $("#xz")[0];
+    var gold = $(".gold-star")[0];
+    var show = $("#desc")[0];
+
+    var scores = [7,5,3,10,4,6,8,5];
+    var desc = ["白羊座...", "摩羯座...", "双子座...", "双鱼座...","金牛座...","狮子座...","水瓶座...","射手座..."];
+
+    gold.style.width = "56px";
+    show.innerHTML = desc[0];
+
+    sl.onchange = function () {
+      // 获得select的选中选项
+      console.log(this.value);//字符串
+
+      //设置一个元素的样式
+      gold.style.width = scores[this.value] * 8  + "px";
+      show.innerHTML = desc[this.value];
+    }
+    </script>
+  </body>
+</html>

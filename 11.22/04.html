@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>发布消息</title>
+    <link rel="stylesheet" href="./css/master.css">
+  </head>
+  <body>
+    <div class="four">
+      <h2>发布消息</h2>
+      <div class="fourbox">
+        <textarea id="text" name="text" rows="8" cols="50"></textarea>
+      </div>
+      <div class="fourbtn">
+        <input id="btn" type="button" value="发布">
+      </div>
+
+      <ul id="item">
+        <li>信息</li>
+      </ul>
+    </div>
+
+
+
+    <script src="./js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var btn = document.getElementById('btn');
+      var text = document.getElementById('text');
+
+      $('#btn').click(function(){
+        var value = text.value.toString();
+        if(value){
+            $('#item').append("<li>" + value + "<span>删除</span></li>");
+            $('#item li span').css({
+              "float":"right",
+              "cursor":"pointer",
+              "color":"red"
+            });
+            $('#text').val("");
+        }
+        else {
+          alert("文本区域不能为空!");
+        }
+
+        $("#item li span").click(function(){
+          $(this).parent().remove();
+        });
+      });
+
+
+    </script>
+  </body>
+</html>

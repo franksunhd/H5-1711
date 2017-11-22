@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- 声明文档类型 告诉浏览器以声明标准解析该页面  -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>随机颜色</title>
+    <!-- rel 调用样式表 说明文档与被连接文档之间的关系-->
+    <link rel="stylesheet" href="./css/master.css">
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+  </head>
+  <body>
+
+    <input class="one" id="btn1" type="button"  value="第一种:# 0-255 ">
+    <input class="one" id="btn2" type="button"  value="第二种:# ffffff ">
+    <input class="one" id="btn3" type="button"  value="第三种:# rgb(#,#,#) ">
+
+    <script type="text/javascript">
+
+      var btn1 = document.getElementById("btn1");
+      var btn2 = document.getElementById("btn2");
+      var btn3 = document.getElementById("btn3");
+
+      btn1.onclick = function(){
+        document.body.style.background = bg1();
+      }
+      btn2.onclick = function(){
+        document.body.style.background = bg2();
+      }
+      btn3.onclick = function(){
+        document.body.style.background = bg3();
+      }
+
+      // 第一种  256
+      function bg1() {
+        color1 = "#" + Math.floor(Math.random()*256).toString(10);
+        // console.log(color1);
+        return color1;
+      }
+
+      // 第二种  # ffffff
+      function bg2() {
+        color2 = "#" + Math.floor(Math.random()* 0xffffff).toString(16);
+        console.log(color2);
+        return color2;
+      }
+
+      // 第三种  rgb()
+      function bg3() {
+        var r = Math.floor(Math.random()*256);
+        var g = Math.floor(Math.random()*256);
+        var b = Math.floor(Math.random()*256);
+
+        var color3 = "RGB(" + r + "," + g + "," + b +")";
+        // console.log(r);
+        console.log(color3);
+        return color3;
+      }
+    </script>
+  </body>
+</html>

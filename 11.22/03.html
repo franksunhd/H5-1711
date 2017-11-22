@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>倒计时</title>
+    <link rel="stylesheet" href="./css/master.css">
+  </head>
+  <body>
+    <div id="ad">
+      距离2018春节
+      <span id="day"></span>
+      <span id="hour"></span>
+      <span id="minute"></span>
+      <span id="second"></span>
+    </div>
+
+    <script type="text/javascript">
+      var day = document.getElementById('day');
+      var hour = document.getElementById('hour');
+      var min = document.getElementById('minute');
+      var sec = document.getElementById('second');
+
+      function scorll(){
+        // 设置 现在距离 1970 年的毫秒数
+        var date = new Date();
+        var now  = date.getTime();
+
+        // 设置 2018 年 距离1970年的毫秒数
+        var endTime = new Date("2018-02-22 00:00:00");
+        var end = endTime.getTime();
+
+        var leftTime = end - now;
+
+        var day1,hour1,min1,sec1;
+        if (leftTime >= 0) {
+          day1 = Math.floor(leftTime/1000/60/60/24);
+          hour1 = Math.floor(leftTime/1000/60/60%24);
+          min1 = Math.floor(leftTime/1000/60%60);
+          sec1 = Math.floor(leftTime/1000%60);
+        }
+
+        day.innerHTML = day1+"天";
+        hour.innerHTML = hour1+"小时";
+        min.innerHTML = min1+"分钟";
+        sec.innerHTML = sec1+"秒";
+      }
+
+      //递归每秒，超时定时器settimeout
+      setInterval(scorll,1000);
+    </script>
+  </body>
+</html>

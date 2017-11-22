@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>1-100内的质数</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 质数 又称 素数 只能被 1 和 自身整除
+
+      for (var i = 2; i <= 100; i++) {
+        for (var j = 2; j < i; j++) {
+
+          if (i%j==0) {
+            break;
+          }
+        }
+        if (i==j) {
+          console.log(i);
+        }
+      }
+    </script>
+  </body>
+</html>

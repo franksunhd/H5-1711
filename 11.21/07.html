@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>1000以内的完数</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+       var x,temp,sum;
+       //X表示要判断的数，temp表示数的因子，sum表示因子之和.
+
+       for(x=1;x<1000;x++)
+       {
+         sum= 0;
+         for(temp=1;temp<x;temp++)
+         {
+           //判断x能否被temp整除，如果可以，则是因子，进行求和
+           if(x%temp==0)
+           {
+             sum= sum+temp;
+           }
+         }
+         //如果是完数，打印输出
+         if(sum==x)
+         {
+           console.log(x);
+           // 6 28 496
+         }
+       }
+    </script>
+  </body>
+</html>

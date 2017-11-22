@@ -1,0 +1,266 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.clearfix::after,
+.clearfix::before {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0px;
+  line-height: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li{
+  /*去掉所有项目符号*/
+  list-style: none;
+}
+
+input {
+  outline: none;
+}
+
+.w {
+  width: 1300px;
+  margin: 0 auto;
+}
+
+.top-bg {
+  height:30px;
+  background: #E3E4E5;
+  margin: 0 auto;
+}
+
+.top-bg a {
+  color: gray;
+}
+
+.top-bg a:hover {
+  color: #1caa43;
+}
+
+.top-left-nav,
+.top-right-nav {
+  width: 300px;
+  height: 30px;
+}
+
+.top-left-nav {
+  float: left;
+}
+
+.top-right-nav {
+  float: right;
+}
+
+.top-left-nav li,
+.head-left-nav li {
+  float: left;
+  line-height: 30px;
+}
+
+.top-left-nav li {
+  width: 80px;
+  font-size: 14px;
+}
+
+.head-left-nav {
+  width: 400px;
+  height: 30px;
+  margin-left: 50px;
+}
+
+.head-left-nav li a {
+  font-size: 14px;
+  color: gray;
+  margin: 0px 10px;
+}
+
+.head-left-nav li a:hover {
+  color: #1caa43;
+}
+
+
+.top-right-nav li a {
+  font-size: 14px;
+  float: right;
+  line-height: 30px;
+  margin: 0px 10px;
+}
+
+.photo {
+  width: 1920px;
+  height: 80px;
+  background: url("../images/360/360.jpg") no-repeat;
+  margin: 0 auto;
+}
+
+.left-div,
+.right-div {
+  float: left;
+  height: 200px;
+  padding: 1px;
+}
+
+.right-div {
+  width: 898px;
+  float: right;
+}
+
+.logo {
+  width: 200px;
+  height: 80px;
+  margin: 60px auto;
+  background: url("../images/360/360mal.png") no-repeat;
+  background-size: 200px 50px;
+}
+
+.head {
+  height: 202px;
+  margin: 0 auto;
+}
+
+.box {
+  float: left;
+  width: 450px;
+  height: 50px;
+  border: 1px solid #1caa43;
+  margin-top: 60px;
+  margin-left: 50px;
+  padding-left: 20px;
+  text-align: left;
+  line-height: 50px;
+  padding-left: 10px;
+}
+.box-1 {
+  width: 60px;
+  height: 52px;
+  float: left;
+  margin-top: 60px;
+  background: #1caa43 url("../images/360/q.png") no-repeat center;
+  background-size: 30px 25px;
+  cursor: pointer;
+}
+
+.but {
+  font-size: 14px;
+  text-align: center;
+  line-height: 50px;
+  width: 150px;
+  height: 50px;
+  float: left;
+  background-color: #F9F9F9;
+  border: 1px solid #ddd;
+  margin-top: 60px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.but i {
+  font-size: 1.4em;
+  color: #1caa43
+}
+
+.erweima {
+  width: 80px;
+  height: 80px;
+  float: right;
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  background: url("../images/360/qcode_app.jpg") no-repeat center center;
+  background-size: 70px 70px;
+}
+
+.navbox {
+  height: 37px;
+}
+
+.navbox ul li{
+  float: left;
+  line-height: 37px;
+}
+
+.navbox ul li a {
+  margin: 0px 10px;
+  color: #363636;
+}
+
+.navbox ul li a:hover {
+  color:#1caa43;
+}
+
+li.all-01 {
+  width: 200px;
+  height: 37px;
+  background: #363636;
+  line-height: 37px;
+  margin-right: 20px;
+}
+
+li.all-01 div {
+  width: 40px;
+  height: 30px;
+  float: left;
+  margin-left: 20px;
+  padding-top: 7px;
+}
+
+li.all-01 div span {
+  width: 20px;
+  height: 5px;
+  display: block;
+  border-bottom: 1px solid #fff;
+}
+
+li.all-01 > span {
+  color: #fff;
+}
+
+.mod-index {
+  width: 1920px;
+  height: 420px;
+  border: 1px solid #000;
+  margin: 0 auto;
+  background: url("../images/360/2.jpg") no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/

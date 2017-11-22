@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>字体的设置</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul li {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .clearfix {
+        zoom: 1;
+        /*兼容IE*/
+      }
+
+      .clearfix::after ,
+      .clearfix::before {
+        content: "";
+        clear: both;
+        display: block;
+        height: 0;
+        visibility: hidden;
+        line-height: 0;
+      }
+
+      div.item {
+        font-size: 50px;
+        font-style: italic;
+        font-weight: bolder;
+        font-family: "微软雅黑";
+      }
+
+      div.ipem {
+        /*
+        顺序千万不能变 (font-style  font-weight)  font-size/line-height  font-family
+        前两项()可不写,后边的必须写
+        */
+        font: italic bolder 50px "微软雅黑";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="item">
+
+      我是div标签
+    </div>
+
+    <div class="ipem">
+      我是第二个div标签
+    </div>
+
+  </body>
+</html>

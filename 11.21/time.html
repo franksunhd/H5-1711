@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>石英钟表</title>
+    <style media="screen">
+      *{
+        margin:0;
+        padding:0;
+      }
+
+    .box{
+      width:600px;
+      height:600px;
+      margin:0 auto;
+      background: url("./images/clock/clock.jpg") no-repeat;
+      position: relative;
+      }
+
+    #hour,
+    #minute,
+    #second {
+    margin: 0 auto;
+    }
+
+    #hour {
+      position: absolute;
+      top: 0px;
+      left: 285px;
+    }
+
+    #minute {
+      position: absolute;
+      top: 0px;
+      left: 285px;
+    }
+
+    #second {
+      position: absolute;
+      top: 0px;
+      left: 285px;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img src="./images/clock/hour.png" id="hour">
+      <img src="./images/clock/minute.png" id="minute">
+      <img src="./images/clock/second.png" id="second">
+    </div>
+
+
+    <script type="text/javascript">
+
+    var hour = document.getElementById("hour");
+    var min = document.getElementById("minute");
+    var sec = document.getElementById("second");
+
+    function score(){
+      var timer = new Date();
+
+      sec.style.webkitTransform = 'rotate(' + timer.getSeconds()*6 + 'deg)';
+      min.style.webkitTransform = 'rotate(' + (timer.getMinutes() + timer.getSeconds()/60)*6 + 'deg)';
+      hour.style.webkitTransform = 'rotate(' + (timer.getHours()%12 + timer.getMinutes()/60 + timer.getSeconds()/3600)*30 + 'deg)';
+
+      console.log(sec.style.webkitTransform);
+    }
+    score();
+    setInterval(score,1000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>css层叠样式表</title>
+    <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+    }
+
+    ul li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+      .divClass p {
+        color: red;
+        font-size: 16px;
+      }
+
+      .item p{
+        color: red;
+      }
+
+      .item span {
+        color: blue;
+      }
+
+      a:link {
+        color:#000;
+        font-size: 16px;
+      }
+
+      a:visited {
+        color: #111;
+        font-size: 12px;
+      }
+
+      a:hover {
+        color: #ccc;
+        font-size: 14px;
+      }
+      a:active {
+        color: #555;
+        font-size: 10px;
+      }
+
+      div p.boss {
+        color: green;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <div class="divClass">
+      我是div标签
+      <p>我是p标签</p>
+    </div>
+
+    <p class="pclass">
+      我是p元素
+    </p>
+
+    <div class="item">
+      我是div标签
+      <p>
+        我是p标签
+        <span>我是span标签</span>
+      </p>
+    </div>
+
+    <a href="https://www.baidu.com">我是a标签--百度一下你就知道</a>
+
+
+    <div class="">
+      <p class="boss">刘备</p>
+      <p>关羽</p>
+      <p>张飞</p>
+    </div>
+
+    <div style="background-color:red;color:blue;line-height:100px;">
+      我是一个div标签
+    </div>
+  </body>
+</html>

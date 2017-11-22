@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.clearfix::before ,
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+.clearfix {
+  zoom:1;
+  /*兼容 IE*/
+}
+
+
+.w {
+  width: 1300px;
+  margin: 0 auto;
+}
+
+/**************************01.html*****************************************************/
+
+
+.one {
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+/**************02.html*************/
+
+.two {
+  width: 100%;
+  height: 100%;
+}
+
+#s1 {
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  font-size: 20px;
+  margin: 20px auto;
+  font-weight: bolder;
+  border: 1px solid #ccc;
+}
+
+/**************03.html*************/
+
+#ad{
+  width:1000px;
+  height:200px;
+  line-height:200px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color:white;
+  margin:50px auto;
+  background:red;
+}
+
+/**************04.html*************/
+
+.four {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.four h2 {
+  text-align: center;
+}
+
+.four .fourbox {
+  width: 400px;
+  margin: 10px auto;
+}
+
+.four .fourbox textarea {
+  margin: 0 auto;
+  outline: none;
+  text-indent: 1em;
+}
+
+.four .fourbtn {
+  margin-left: 100px;
+  margin-bottom: 10px;
+}
+
+.four .fourbtn input {
+  width: 50px;
+  height: 30px;
+}
+
+.four #item {
+  width: 400px;
+  margin: 20px auto;
+}
+
+.four #item li {
+  word-break: break-all;
+  line-height: 30px;
+  border-bottom: 1px dashed #ccc;
+}
+
+
+
+
+
+
+
+
+
+/*******************************************************************************/
