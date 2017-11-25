@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+.clearfix::after ,
+.clearfix::before {
+  content: "";
+  clear: both;
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+.clearfix {
+  zoom:1;
+  /*兼容IE*/
+}
+
+/*版心 w*/
+
+.w {
+  width: 1300px;
+  margin: 0 auto;
+}
+
+/********************love.html*************************/
+.bg {
+  width: 500px;
+  height: 600px;
+  margin: 50px auto;
+  background: url("../../images/love/bg.gif") #cce23f;
+}
+
+.top {
+  width: 500px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 40px;
+  color: white;
+}
+
+.bottom {
+  width: 400px;
+  height: 470px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.line {
+  width: 8px;
+  height: 40px;
+  float: left;
+  background: #cce23f;
+  margin: 20px 20px 0px 50px;
+}
+
+.lines {
+  font-size: 16px;
+  line-height: 50px;
+  width: 350px;
+  height: 50px;
+  text-indent: 2em;
+  background: url("../../images/love/tb.gif") no-repeat;
+  background-size: 20px 20px;
+  background-position: left center;
+  border-bottom: gray 2px dashed;
+  margin: 0 auto;
+  color: #426ab3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************************************/

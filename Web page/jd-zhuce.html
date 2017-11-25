@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>京东注册</title>
+    <link rel="stylesheet" href="./css/jd/style.css">
+    <script src="./js/jquery.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+      <div class="head w">
+        <div class="head-logo clearfix">
+                <div class="logo fl"></div>
+                <div class="hello-text fl">欢迎注册</div>
+                <div class="login-text">
+                  已经注册？
+                  <a href="#">登录</a>
+                </div>
+        </div>
+      </div>
+      <div class="bg"></div>
+
+      <div class="main w clearfix">
+          <div class="reg fl clearfix">
+            <form action="#" method="get">
+              <div>
+                <div class="form-item">
+                  <label>用　户　名</label>
+                  <input type="text" name="username" maxlength="20">
+                  <span id="show-tip">您的账户名和登录名</span>
+                </div>
+                <div class="form-tip">
+                    !　支持中文、字母、数字、“-”“_”的组合
+                </div>
+
+                <div class="form-item clearfix">
+                  <label>设置密码</label>
+                  <input type="password" name="passwd"　maxlength="20">
+                  <span id="show-tip">建议至少使用两种字符组合</span>
+                </div>
+                <div class="form-tip">
+                    ! 建议使用字母、数字和符号两种以上组合
+                </div>
+
+                <div class="form-item">
+                  <label>确认密码</label>
+                  <input type="password" name="equalTopasswd">
+                  <span id="show-tip">请再次输入密码</span>
+                </div>
+                <div class="form-tip">
+                    ! 请再次输入密码
+                </div>
+
+                <div class="form-item">
+                  <label>手机0086</label>
+                  <input type="text" name="formphone">
+                  <span id="show-tip">建议使用常用手机</span>
+                  <div class="form-tip-right">
+                    <a href="#">邮箱验证</a>
+                  </div>
+                </div>
+                <div class="form-tip">
+                    ! 请输入手机号
+                </div>
+
+                <div class="form-item">
+                  <label>验　证　码</label>
+                  <input id="form-item-left" type="text" name="autoCode">
+                  <span id="show-tip">请输入验证码</span>
+                  <div class="form-item-right-01"></div>
+                </div>
+                <div class="form-tip">
+                    ! 点击图片更换验证码
+                </div>
+
+                <div class="form-item">
+                  <label>手机验证码</label>
+                  <input id="form-item-left" type="text" name="phoneCode">
+                  <span id="show-tip">请输入手机验证码</span>
+                  <div class="form-item-right-02">获取验证码</div>
+                </div>
+                <div class="form-tip">
+                    ! 请输入手机验证码
+                </div>
+                <div class="form-sub">立即注册</div>
+              </div>
+            </form>
+          </div>
+          <div class="company fl">
+            <div class="company-reg">
+              <div class="i-company fl"></div>
+              <a href="#">
+                <span>企业用户注册</span>
+              </a>
+            </div>
+            <div class="inner-cust">
+              <div class="inner">
+                <a href="#">
+                  <span>INTERNATIONAL <br>
+                    CUSTOMERS
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="foot w">
+          <div class="link">
+            <a href="#">关于我们</a>|
+            <a href="#">联系我们</a>|
+            <a href="#">人才招聘</a>|
+            <a href="#">商家入住</a>|
+            <a href="#">广告服务</a>|
+            <a href="#">手机京东</a>|
+            <a href="#">友情链接</a>|
+            <a href="#">销售联盟</a>|
+            <a href="#">京东社区</a>|
+            <a href="#">京东公益</a>|
+            <a href="#">English Site</a>
+          </div>
+          <div class="copyright">Copyright©2004-2016  京东JD.com 版权所有</div>
+      </div>
+      <a class="feedback" href="#"></a>
+
+      <script type="text/javascript">
+        //获取焦点
+        $(".form-item span").click(function(){
+          $(this).prev().focus();
+        });
+
+        $(".form-item input").focus(function(){
+          $(this).next().css("visibility","hidden");
+          $(this).parent().next().css("visibility","visible");
+        });
+
+        // 失去焦点
+        $(".form-item input").blur(function(){
+          var text = $(this).val();
+          if(!text){
+            // 为空
+            $(this).nextAll(".form-item span").css("visibility","visible");
+            $(this).parent().next().css("visibility","hidden");
+
+          } else {
+            // 不为空
+            $(this).nextAll(".form-item span").css("visibility","hidden");
+            $(this).parent().next().css("visibility","hidden");
+            $(".reg .form-item").css("border","1px solid  #dddddd");
+            // $(".reg .form-item:eq(1)").css("border","1px solid  #dddddd");
+            // $(".reg .form-item:eq(2)").css("border","1px solid  #dddddd");
+            // $(".reg .form-item:eq(3)").css("border","1px solid  #dddddd");
+            // $(".reg .form-item:eq(4)").css("border","1px solid  #dddddd");
+            // $(".reg .form-item:eq(5)").css("border","1px solid  #dddddd");
+          }
+        });
+        $(".form-item input:password").css("letter-spacing","10px");
+        $(".main .reg .form-sub").click(function(){
+          // 取出各个框的值
+            var username = $("input[name=username]").val();
+            var passwd = $("input[name=passwd]").val();
+            var equalTopasswd = $("input[name=equalTopasswd]").val();
+            var formphone = $("input[name=formphone]").val();
+            var autoCode = $("input[name=autoCode]").val();
+            var phoneCode = $("input[name=phoneCode]").val();
+          // 判断为空，弹出提示框
+            if(!username){
+              $(".reg .form-item:eq(0)").css("border","1px solid red");
+              alert("请输入用户名");
+            }else if(!passwd){
+              $(".reg .form-item:eq(1)").css("border","1px solid red");
+              if(!equalTopasswd){
+                alert("请输入密码");
+              }
+            }else if(!equalTopasswd){
+              $(".reg .form-item:eq(2)").css("border","1px solid red");
+              if(!equalTopasswd){
+                alert("请再次输入密码");
+              }
+
+            }else if(!formphone){
+              $(".reg .form-item:eq(3)").css("border","1px solid red");
+              alert("请输入手机号");
+            }else if(!autoCode){
+              $(".reg .form-item:eq(4)").css("border","1px solid red");
+              alert("请输入验证码");
+            }else if(!phoneCode){
+              $(".reg .form-item:eq(5)").css("border","1px solid red");
+              alert("请输入手机验证码");
+            }else {
+              //最终都不为空，提示注册成功,并清空数据
+              alert("恭喜您"+ username + "注册成功");
+              $("input[name=username]").val("");
+              $("input[name=passwd]").val("");
+              $("input[name=equalTopasswd]").val("");
+              $("input[name=formphone]").val("");
+              $("input[name=autoCode]").val("");
+              $("input[name=phoneCode]").val("");
+            }
+        });
+      </script>
+  </body>
+</html>

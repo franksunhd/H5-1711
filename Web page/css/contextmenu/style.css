@@ -1,0 +1,73 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  font-family: 'lucida grande', tahoma, verdana;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+.Menu {
+  width: 170px;
+  height: 200px;
+  position: absolute;
+}
+
+#myMenu {
+  width: 100%;
+  position: relative;
+  background: #282c34;
+  display: none;
+  top: 10px;
+  left: 10px;
+}
+
+#myMenu li {
+  list-style: none;
+  height: 30px;
+  color: #f2f2f2;
+  text-align: left;
+  line-height: 30px;
+  text-indent: 1em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#myMenu li:hover {
+  background: #ff7537;
+}
+/*************************添加删除事件*********************************/
+.w {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn button{
+  width: 100px;
+  height: 30px;
+  margin-top: 20px;
+}
+
+.list {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 1px solid gray;
+  border-collapse: collapse;
+}
+
+.list th , .list td {
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid gray;
+}
+
+.list td button {
+  width: 80px;
+  height: 30px;
+}

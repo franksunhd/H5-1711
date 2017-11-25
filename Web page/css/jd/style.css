@@ -1,0 +1,279 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 14px;
+}
+
+body input button {
+  font-family: "Microsoft YaHei","Hiragino Sans GB";
+}
+
+.w {
+  width: 1260px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.fl {
+  float: left;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: inline-block;
+}
+
+.head-logo {
+  height: 90px;
+}
+
+.head-logo .logo {
+  width: 168px;
+  height: 51px;
+  background: url("../../images/jd/icon.png") 0px 2px;;
+  margin-top: 20px;
+}
+
+.head-logo .hello-text {
+  height: 34px;
+  line-height: 34px;
+  font-size: 24px;
+  color: #333;
+  padding-left: 30px;
+  margin-top: 34px;
+}
+
+.head-logo .login-text {
+  font-size: 16px;
+  float: right;
+  margin-top: 55px;
+  color: #999;
+}
+
+.head-logo .login-text a {
+  color: #333;
+}
+
+.head-logo .login-text a:hover {
+  color: #D00414;
+}
+
+.bg {
+  height: 10px;
+  background: url("../../images/jd/headbg.jpg") repeat-x;
+}
+
+.main {
+  width: 830px;
+  height: 605px;
+  margin-top: 60px;
+  position: relative;
+}
+
+.main .reg {
+  width: 400px;
+  height: 570px;
+}
+
+.main .reg .form-item {
+  width: 400px;
+  height: 51px;
+  border: 1px solid #DDDDDD;
+  position: relative;
+  /*margin-top: 27px;*/
+}
+.main .reg .form-item label {
+  float: left;
+  width: 90px;
+  height: 52px;
+  font-size: 16px;
+  line-height: 52px;
+  padding-left: 20px;
+  color: #666666;
+}
+
+.main .reg .form-item input {
+  width: 150px;
+  height: 50px;
+  color: #CCCCCC;
+  padding-left: 10px;
+  outline: none;
+  border: none;
+}
+
+.main .reg .form-item span {
+  height: 50px;
+  line-height: 54px;
+  position: absolute;
+  top: 0px;
+  left: 125px;
+  color: #CCCCCC;
+}
+
+.main .reg .form-item #form-item-left {
+  width: 130px;
+}
+.main .reg .form-item .form-item-right-01,
+.main .reg .form-item .form-item-right-02 {
+  width: 120px;
+  height: 54px;
+  float: right;
+  margin-right: 5px;
+}
+.main .reg .form-item .form-item-right-01 {
+  background: url("../../images/jd/image.jpeg") no-repeat center center;
+}
+
+.main .reg .form-item .form-item-right-02 {
+  text-align: center;
+  line-height: 54px;
+  background: #F2F2F2;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.main .reg .form-tip {
+  width: 400px;
+  height: 27px;
+  font-size: 12px;
+  color: red;
+  text-align:left;
+  line-height: 27px;
+  visibility: hidden;
+}
+
+.main .reg .form-item .form-tip-right a{
+  float: right;
+  color: #529AFF;
+  font-size: 12px;
+  line-height: 27px;
+  position: absolute;
+  top: 55px;
+  right: 10px;
+}
+
+.main .reg .form-item .form-tip-right a:hover {
+  color: red;
+}
+
+.main .reg .form-sub {
+  width: 400px;
+  height: 54px;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  line-height: 54px;
+  margin-top: 20px;
+  background: #ee2222;
+}
+
+.main .company {
+  width: 326px;
+  height: 605px;
+  border-left: 1px solid #999;
+  margin-left: 100px;
+}
+
+.main .company .company-reg {
+  width: 180px;
+  height: 60px;
+  margin-left: 100px;
+  border-bottom: 1px solid #999;
+}
+
+.main .company .company-reg .i-company {
+  width: 30px;
+  height: 29px;
+  background: url("../../images/jd/icon.png") no-repeat 0px -50px;
+}
+
+.main .company .company-reg a {
+  height: 30px;
+  color: #666;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  margin-left: 15px;
+  letter-spacing: 3px;
+}
+
+.main .company .inner-cust {
+  width: 180px;
+  height: 60px;
+  margin-left: 100px;
+  margin-top: 40px;
+}
+
+.main .company .inner-cust .inner {
+  width: 32px;
+  height: 32px;
+  margin-top: 10px;
+  background: url("../../images/jd/icon.png") no-repeat -50px -50px;
+}
+
+.main .company .company-reg a:hover,.main .company .inner-cust a:hover{
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.main .company .inner-cust a {
+  height: 30px;
+  color: #666;
+  font-size: 16px;
+  display: inline-block;
+  line-height: 20px;
+  text-align: left;
+  margin-left: 45px;
+  margin-top: -3px;
+}
+
+.foot {
+  height: 118px;
+  margin-top: 48px;
+  text-align: center;
+  border-top: 1px solid #999;
+}
+
+.foot .link {
+  color: #999;
+  height: 20px;
+  line-height: 20px;
+  margin-top: 30px;
+}
+
+.foot .link a {
+  color: #999;
+  margin: 0 10px;
+}
+
+.foot .link a:hover {
+  text-decoration: underline;
+}
+.foot .copyright {
+  height: 20px;
+  color: #999;
+  line-height: 20px;
+  margin-top: 20px;
+}
+
+.feedback {
+  display: block;
+  width: 33px;
+  height: 135px;
+  position: absolute;
+  top: 300px;
+  right: 0px;
+  background: url("../../images/jd/icon.png") no-repeat -367px 0px;
+}
+
+.feedback:hover {
+  background: url("../../images/jd/icon.png") no-repeat -335px 0px;
+}

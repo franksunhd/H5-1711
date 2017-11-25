@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>右键菜单</title>
+  <link rel="stylesheet" href="./css/contextmenu/style.css"> </head>
+<body>
+<div class="Menu">
+  <ul id="myMenu">
+    <li>新建文件</li>
+    <li>新建文件夹</li>
+    <li>打开终端</li>
+    <li>粘贴</li>
+    <li>更改桌面背景</li>
+    <li>按名称整理桌面</li>
+  </ul>
+</div>
+
+  <script src="./js/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    // doucment是整个页面,鼠标右键事件调用contextmenu()方法
+    // 调用show()用来显示Menu
+
+        $(document).contextmenu(function(e) {
+
+          var documentWidth = $(document).width();
+          var documentHeight = $(document).height();
+          var MenuWidth = $("#myMenu").width();
+          var MenuHeight = $("#myMenu").height();
+          var left = documentWidth - MenuWidth;
+          var tops = documentHeight - MenuHeight;
+
+          //取消点击动作的默认导航行为。
+          e.preventDefault();
+          //控制台打印右键单击位置
+          console.log(e.pageX + "px" + e.pageY + "px");
+
+
+          // 获取当前距左边的间距
+          var leftMenu = e.pageX;
+          var topMenu = e.pageY;
+
+          // 区域 1
+          if (leftMenu < left && topMenu < tops) {
+            $(".Menu #myMenu").css({
+              "display":"block",
+              "top": e.pageY + "px",
+              "left": e.pageX + "px"
+            });
+          }
+          else {
+            // 区域2
+            if (leftMenu >= left && topMenu < tops) {
+              $(".Menu #myMenu").css({
+                "display":"block",
+                "top": e.pageY + "px",
+                "left": left + "px"
+              });
+            }
+            // 区域3
+            if (leftMenu < left && topMenu >= tops) {
+              $(".Menu #myMenu").css({
+                "display":"block",
+                "top": tops + "px",
+                "left": e.pageX + "px"
+              });
+            }
+
+            // 区域4
+            if (leftMenu >= left && topMenu >= tops) {
+              $(".Menu #myMenu").css({
+                "display":"block",
+                "top": tops + "px",
+                "left": left + "px"
+              });
+            }
+          }
+
+        });
+
+        //调用鼠标单击事件，隐藏Menu
+        $(document).click(function() {
+          //hide()用来隐藏匹配元素
+          $(".Menu #myMenu").hide();
+        });
+  </script>
+</body>
+
+</html>

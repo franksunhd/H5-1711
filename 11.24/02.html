@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .main {
+        width: 200px;
+        height: 100px;
+        background-color: #ccc;
+        line-height: 100px;
+        text-align: center;
+        color: #aaa;
+        float: left;
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="main old">div class="main"</div>
+    <div class="main other">div class="main other</div>
+    <div class="main other">div class="main other</div>
+
+    <div class="dd mm"></div>
+    <div class="dd ee"></div>
+    <div class="dd cc"></div>
+    <div class="dd nn "></div>
+    <div class="dd ss"></div>
+
+    <div class="old"></div>
+
+
+    <script src="./js/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(".main.other").css("border","3px solid red");
+
+      $('.main ~').css("background-color","red");
+
+      $('').css();
+    </script>
+  </body>
+</html>

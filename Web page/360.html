@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>360商城导航</title>
+    <link rel="stylesheet" href="./css/360/style.css" type="text/css">
+    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+  </head>
+  <body>
+
+    <!-- photo -->
+    <div class="photo"></div>
+
+    <!-- top -->
+    <div class="top-bg">
+      <div class="w">
+        <ul class="top-left-nav">
+          <li><a href="#">帮助中心</a></li>
+          <li><a href="#">收藏本站</a></li>
+          <li><a href="#">手机360商城</a></li>
+        </ul>
+        <ul class="top-right-nav">
+            <li><a href="#">登录</a></li>
+            <li><a href="#">注册</a></li>
+            <li><a href="#">我的订单</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- head -->
+    <div class="head-bg">
+      <div class="w head">
+        <!-- logo -->
+        <div class="left-div">
+            <div class="logo"></div>
+        </div>
+        <!-- box -->
+        <div class="right-div">
+              <input type="text" placeholder="6C" class="box"></input>
+              <div class="box-1"></div>
+
+              <div class="but">
+                <i class="fa fa-shopping-cart"></i>
+                &nbsp;&nbsp;我的购物车(0)
+                <div class="butbox">请 <a href="#">登录</a> 后查看您的购物车。</div>
+              </div>
+
+              <div class="erweima"></div>
+
+              <ul class="head-left-nav">
+                  <li><a href="#">6W</a></li>
+                  <li><a href="#">N5S</a></li>
+                  <li><a href="#">后视镜</a></li>
+                  <li><a href="#">摄像机</a></li>
+                  <li><a href="#">插线板</a></li>
+              </ul>
+        </div>
+      </div>
+
+      <!-- navbox -->
+      <div class="w navbox">
+        <ul>
+          <li class="all-01">
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span>全部智能酷品</span>
+          </li>
+          <li><a href="#">手机</a></li>
+          <li><a href="#">行车记录仪</a></li>
+          <li><a href="#">儿童手表</a></li>
+          <li><a href="#">摄像机</a></li>
+          <li><a href="#">路由器</a></li>
+          <li><a href="#">二手手机</a></li>
+          <li><a href="#">社区</a></li>
+          <li><a href="#">游戏权益中心</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- mod-index -->
+    <div class="mod-index"></div>
+
+    <!-- side-category  -->
+    <div class="w side-category">
+      <div class="left-one">
+        <ul>
+          <li>
+            <a href="#">
+              <i class="iconfont icon-shouji"></i>
+              <span>手机/配件</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="iconfont icon-shoubiao"></i>
+              <span>数码</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="iconfont icon-luyouqi"></i>
+              <span>电脑周边</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="iconfont icon-SDCard"></i>
+              <span>移动存储</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="iconfont icon-fuwu"></i>
+              <span>汽车用品</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="iconfont icon-xiyiji"></i>
+              <span>家用电器</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="iconfont icon-qiuhuiweixuanzhong"></i>
+              <span>户外/运动</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="iconfont icon-benzi-copy-copy"></i>
+              <span>教育/文具</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="left-two"></div>
+      <div class="right-one">
+        <div class="top">
+          <h5>商品信息</h5>
+          <ul>
+            <li>360新品手机，全面显而易见>></li>
+            <li>咚咚智能蓝牙MP3，与人工智能对话 >></li>
+            <li>360行车记录仪又一力作>></li>
+          </ul>
+        </div>
+        <div class="center">
+          <ul>
+            <li>
+              <a href="#">
+                <img src="./images/360/1.png" alt="无法显示图片">
+                <p>手机</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/360/2.png" alt="无法显示图片">
+                <p>智能</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./images/360/3.png" alt="无法显示图片">
+                <p>汽车</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="bottom"></div>
+      </div>
+      <div class="right-two"></div>
+
+    </div>
+
+
+    <script src="./js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function(){
+        $(".but").mouseover(function(){
+          $(".butbox").show();
+        }).mouseout(function(){
+          $(".butbox").hide();
+        });
+      });
+    </script>
+  </body>
+</html>

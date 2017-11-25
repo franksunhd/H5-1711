@@ -1,0 +1,330 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.w {
+  /*设置版心*/
+  width:980px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+a:link , a:visited {
+  color: #000;
+}
+a:hover {
+  color: red;
+}
+ul li {
+  list-style: none;
+}
+
+.clearfix::after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: ".";
+  height: 0;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.head {
+  height: 60px;
+  background-image: url("../../images/shanghe/head_bg.png") repeat-x;
+}
+
+.head_nav {
+  height: 60px;
+}
+
+.head_nav .logo {
+  float: left;
+  width: 200px;
+  height:47px;
+  margin-top: 13px;
+  background: url("../../images/shanghe/logo.png") no-repeat;
+}
+
+.head_nav .inputbox {
+  width: 200px;
+  height: 30px;
+  float: right;
+  background: white;
+  margin-top: 10px;
+}
+
+.head_nav .inputbox .input {
+  width: 167px;
+  height: 30px;
+  float: left;
+  background: url("../../images/shanghe/input_r1_c1.png") no-repeat;
+}
+
+.head_nav .inputbox .inputbtn {
+  width: 33px;
+  height: 30px;
+  float: left;
+  background: url("../../images/shanghe/input_r1_c2.png") no-repeat;
+}
+
+.nav {
+  height: 55px;
+  background: url("../../images/shanghe/nav_bg.png") repeat-x;
+}
+
+.nav_box {
+  height: 55px;
+  position: relative;
+}
+
+.nav_box .new {
+  width: 25px;
+  height: 20px;
+  background: url("../../images/shanghe/new.png") no-repeat center center;
+  position: absolute;
+  left: 235px;
+  top:5px;
+}
+
+.nav_box h1 {
+  font-size:16px;
+  font-weight: 600;
+  font-family: "宋体";
+  float: left;
+  width: 133px;
+  text-align: center;
+  line-height: 55px;
+  border-right: 2px solid RGBA(219,219,219,0.5);
+}
+
+.photo {
+  height: 620px;
+  position: relative;
+}
+
+.photo .code {
+    width: 115px;
+    height: 115px;
+    background: url("../../images/shanghe/taobao.jpg") no-repeat center center;
+    position: absolute;
+    left: 980px;
+    top: -1px;
+}
+
+.photo .lunbo {
+  width: 980px;
+  height: 597px;
+  background: url("../../images/shanghe/banner.png") no-repeat;
+  float: left;
+}
+
+.photo .point {
+  width: 980px;
+  height: 23px;
+  float: left;
+  background: url("../../images/shanghe/point.png") no-repeat center bottom;
+}
+
+.notice {
+  font-size: 16px;
+  line-height: 30px;
+  height: 30px;
+  border: 1px solid #efefef;
+  margin-top: 20px;
+  background: #fbfbfb;
+}
+
+.notice p {
+  width: 870px;
+  float: left;
+}
+
+.notice .aurl {
+  width: 90px;
+  height: 20px;
+  float: right;
+  margin-top: 5px;
+  background: url("../../images/shanghe/share.png") no-repeat center center;
+
+}
+
+.centent {
+  height: 300px;
+  margin-top:20px;
+}
+
+.centent .left ,.centent .center,.centent .right {
+  height: 298px;
+  border: 1px solid rgba(100, 103, 100, 0.3);
+  float: left;
+}
+
+.centent .left {
+  width: 300px;
+}
+
+.centent .center {
+  width: 347px;
+  margin-left: 12px;
+  position: relative;
+}
+
+.centent .center .title a {
+  float: right;
+  font-size: 14px;
+  font-family: "宋体";
+  position: absolute;
+  width: 100px;
+  left: 237px;
+}
+.centent .center p {
+  float: left;
+  text-align: left;
+}
+
+.centent .right {
+  width: 300px;
+  margin-left: 11px;
+}
+
+.centent .title {
+  float: left;
+  text-indent: 2em;
+  width: 164px;
+  height: 30px;
+  line-height: 30px;
+  color: #7cb906;
+  margin-left: 20px;
+  margin-top: 20px;
+  background: url("../../images/shanghe/canvas_r4_c4.png") no-repeat left 8px;
+}
+
+.abox {
+  width: 298px;
+  height: 247px;
+  float: left;
+}
+
+.bbox {
+  font-size: 12px;
+  width: 255px;
+  height: 225px;
+  float: left;
+  margin: 10px 22px;
+  overflow: hidden;
+}
+
+.box {
+  overflow: hidden;
+  font-size: 12px;
+  width: 280px;
+  height: 225px;
+  float: left;
+  margin: 10px 12px;
+  padding: 0 20px;
+}
+
+.abox .phone {
+  margin-top: 12px;
+  height: 247px;
+  background: url("../../images/shanghe/phone.png") no-repeat;
+  background-size: 297px 222px;
+}
+
+.box li {
+  height: 35px;
+  line-height: 35px;
+  border-bottom: 1px dashed #000;
+}
+
+.bbox ul {
+  padding-left:25px;
+}
+
+.bbox li {
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
+  border-left: 4px solid #7cb906;
+  text-indent: 1em;
+  margin-top: 15px;
+}
+
+.bbox p {
+  font-size: 12px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.bottom {
+  height: 305px;
+  background: url("../../images/shanghe/foot.png") repeat-x;
+  margin-top: 40px;
+}
+.bottom .w {
+  position: relative;
+  height: 220px;
+}
+
+.bottom .w .top {
+  width: 51px;
+  height: 27px;
+  background: url("../../images/shanghe/canvas_r4_c3.png") no-repeat;
+  position: absolute;
+  left: 929px;
+}
+
+.bottom_title {
+  width: 116px;
+  height: 175px;
+  float: left;
+  margin-top: 45px;
+}
+
+.bottom_title h1 {
+  font-size: 14px;
+  color: #c7c7c7;
+}
+
+.bottom_title ul {
+  margin-top: 8px;
+}
+
+.bottom_title li a {
+  color: #696666;
+  font-size: 12px;
+}
+
+.bottom_title a:hover {
+  color: #fff;
+  font-size: 12px;
+}
+.bop{
+  float: left;
+  height: 220px;
+}
+.cop {
+  float: left;
+  width: 980px;
+  height:55px;
+}
+
+.cop .dop {
+  height: 50px;
+  margin-top: 30px;
+}
+.dop p {
+  font-size: 12px;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  color: white;
+}
