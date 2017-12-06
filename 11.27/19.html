@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        width: 100%;
+        height: 33px;
+        background-color: pink;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="div1"></div>
+    <div class="div2"></div>
+
+    <script src="./js/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $('div').click(function(){
+        $(this).text('你点击了这个div！').siblings().text('');
+      });
+    </script>
+  </body>
+</html>

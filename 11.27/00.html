@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>next,nextAll,prev,prevAll,siblings</title>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6
+      <p>this is a p tag</p></li>
+      <li>7</li>
+      <li>8</li>
+    </ul>
+
+    <script src="./js/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $('ul li:eq(3)').css("border","1px solid red");
+
+      $('ul li').eq(3).next().css("border","1px solid blue");
+      $('ul li').eq(3).nextAll().css("font-size","30px");
+
+      $('ul li').eq(3).prev().css("border","1px solid purple");
+      $('ul li').eq(3).prevAll().css("font-size","30px");
+
+      $('ul li').eq(3).siblings().css("background","pink");
+
+      $('ul li').find("p").css("border","1px solid blue");
+    </script>
+  </body>
+</html>

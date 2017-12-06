@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>事件冒泡</title>
+    <style media="screen">
+      #div1 {
+        width: 800px;
+        height: 800px;
+        background: pink;
+        margin: 0 auto;
+      }
+      #div2 {
+        width:500px;
+        height: 500px;
+        background: yellow;
+      }
+
+      #span {
+        width: 300px;
+        height: 300px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <div id="div1">
+      <div id="div2">
+        <p id="span">this is a span tag!</p>
+      </div>
+    </div>
+    <script src="./js/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $("#body").bind("click",function(e){
+        // e.target 表示被点击的目标
+        alert("事件冒泡了！点击的元素是：" + $(e.target).attr("id") + " 单击事件绑定在Body上");
+      });
+    </script>
+  </body>
+</html>

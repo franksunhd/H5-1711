@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>detach() 可恢复</title>
+  </head>
+  <body>
+    <p>First</p>
+    <p>Second</p>
+    <p>third</p>
+    <h3>请点击这里删除 第一个p标签 </h3>
+    <script src="./js/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var p;
+      $('h3').click(function(){
+        if(p){
+          p.appendTo('h3');
+          p = null;
+        }else {
+          p = $('p').detach();
+          console.log(p);
+          console.log(typeof p);
+        }
+      });
+    </script>
+  </body>
+</html>

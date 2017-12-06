@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>数据绑定</title>
+    <script src="../js/angular.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <!--
+
+    -->
+
+      <div ng-app="" ng-init="quantity=0;price=5">
+        <label for="sl">数量</label>
+        <input id="sl" type="number" ng-model="quantity">
+        <label for="pr">价格</label>
+        <input id="pr" type="number" ng-model="price" disabled="disabled">
+        <p><b>总价:</b><span ng-bind="quantity * price"></span></p>
+      </div>
+
+
+  </body>
+</html>

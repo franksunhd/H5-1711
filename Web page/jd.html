@@ -44,10 +44,13 @@
           <div class="search-btn"><img src="./images/jd/btnbg.png" alt=""></div>
           <div class="carbox">
             <div class="car"></div>
-            <div class="zero"></div> <a href="#" style="color:red;">我的购物车</a> </div>
+            <div class="zero"></div>
+            <a href="#" style="color:red;">我的购物车</a>
+            <div class="carhover">请先 <a href="#" style="color:red;">登录</a> 才能够购物!</div>
+          </div>
           <div class="search-nav">
             <ul>
-              <li><a href="#" style="color:red;">1元秒电脑</a></li>
+              <li><a href="#"  >1元秒电脑</a></li>
               <li><a href="#">满7减6</a></li>
               <li><a href="#">农资周年庆</a></li>
               <li><a href="#">七夕钜惠</a></li>
@@ -314,7 +317,7 @@
   <div class="fbt">
     <div class="w">
       <div class="find clearfix">
-        <div class="f-title">
+        <div class="f-title f-t">
           <div class="fcol-1">
             <h3>发现好货</h3>
           </div>
@@ -364,9 +367,73 @@
         </div>
       </div>
 
-
-      <div class="buy"></div>
-      <div class="tip"></div>
+      <div class="buy">
+        <div class="f-title f-b">
+          <div class="fcol-1">
+            <h3>会买专辑</h3>
+          </div>
+          <div class="fcol-2">
+            <a href="#" class="box_subtit">甄选优质好物 <i></i></a>
+          </div>
+        </div>
+        <div class="b-body">
+          <a href="#" class="bcol-1">
+            <p>“曲”之有道，颠覆视觉有它足矣</p>
+            <img src="./images/jd/ipad1.png" alt="无法显示图片">
+          </a>
+          <a href="#" class="bcol-2">
+            <p>打破宅男枷锁，暗黑系小黑鞋酷炫出街</p>
+            <img src="./images/jd/ipad2.png" alt="无法显示图片">
+          </a>
+        </div>
+      </div>
+      <div class="tip">
+        <div class="f-title f-p">
+          <div class="fcol-1">
+            <h3>排行榜</h3>
+          </div>
+          <div class="fcol-2">
+            <a href="#" class="box_subtit">专属你的购物指南 <i></i></a>
+          </div>
+        </div>
+        <div class="p-body">
+          <ul>
+            <li>白酒</li>
+            <li>奶粉</li>
+            <li>奶粉</li>
+            <li>乳液面霜</li>
+            <li>男装</li>
+          </ul>
+          <div class="p-img">
+            <ul>
+              <li><a href="#">
+                <img src="./images/jd/jiu1.jpeg" alt="无法显示图片">
+                <p>泸州老窖六年陈头曲/六年窖52度 浓香型白酒 整箱装 500ml*6瓶（新老包装随机发货）</p>
+              </a></li>
+              <li><a href="#">
+                <img src="./images/jd/jiu2.jpeg" alt="无法显示图片">
+                <p>贵州茅台集团 百年盛世52度白酒礼盒装单瓶 浓香型满减 百年盛世 五星佳品 1元试喝 1瓶</p>
+              </a></li>
+              <li><a href="#" class="right">
+                <img src="./images/jd/jiu3.jpeg" alt="无法显示图片">
+                <p>江小白 Se.100 40度 100ml*12瓶 整箱装白酒（小瓶装清香型高粱酒）</p>
+              </a></li>
+              <li><a href="#" class="bottom">
+                <img src="./images/jd/jiu4.jpeg" alt="无法显示图片">
+                <p>｛买2包邮优先发货 仅剩200瓶｝茅台镇酱香型礼盒特价纯粮食原浆白酒老酒</p>
+              </a></li>
+              <li><a href="#" class="bottom">
+                <img src="./images/jd/jiu5.jpeg" alt="无法显示图片">
+                <p>泸州老窖股份出品52度500ml浓香型白酒 久藏老窖金色岁月酒1瓶</p>
+              </a></li>
+              <li><a href="#" class="right bottom">
+                <img src="./images/jd/jiu6.jpeg" alt="无法显示图片">
+                <p>泸州老窖白酒久藏老窖52度500ml 珍藏3酒升级版单瓶</p>
+              </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -473,6 +540,12 @@
     }
     //递归每秒，超时定时器settimeout
     setInterval(scorll,1000);
+
+    $(".head .search .carbox").mouseover(function(){
+      $('.head .search .carbox .carhover').show();
+    }).mouseout(function(){
+      $('.head .search .carbox .carhover').hide();
+    });
 
   });
 </script>

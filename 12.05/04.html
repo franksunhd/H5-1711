@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>浅复制和深复制的区别</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*============浅复制==============*/
+      var objA = {
+        name : "xiaoma",
+        age : 23
+      }
+
+      var objB = objA;
+      objB.name = "lisi";
+      // console.log(objA.name);
+
+      var A = [1,2,[1,2,3],3,4];
+      B = A;
+      B[2][1] = 19;
+      // console.log(A[2][1]);
+
+      /*
+      浅复制比较简单,复制的只是引用,而不是数据的完全复制.
+      实际是两个变量同时指向一块内存区域,这就造成了如果对
+      一个变量里的数据进行改变,那么另一个变量的数据也会随着改变.
+      */
+
+      var array1 = [1,[1,2,3],{name:'ssy'}];
+      var arr_concat = array1.concat();
+      var arr_slice = array1.slice();
+      arr_concat[1][1] = 5;
+      // console.log(array1[1]);
+      // console.log(arr_slice[1]);
+
+      arr_slice[2].name = "lisi";
+      // console.log(array1[2].name);
+      // console.log(arr_concat[2].name);
+
+      /*============深复制==============*/
+
+      // var old_obj = {
+      //   name : "lisi", //
+      //   age : 23,
+      //   arr : [1,2,3,4,[1,2,3],5,6]
+      // }
+      var old_obj = [1,2,3,4,[1,2,3],5,6];
+
+      function deepCopy(data){
+        var type = typeof(data);
+        console.log(type);
+        var obj;
+        if (type === 'array') {
+          obj = [];
+        } else if (type === 'object') {
+          obj = {};
+        } else {
+          // 基本数据类型
+          return data;
+        }
+        if(type === 'array'){
+          for (var i = 0, len = data.length; i < len; i++) {
+            obj.push(deepCopy(data[i]));
+          }
+        } else if (type === 'object') {
+          for (var key in data) {
+            obj[key] = deepCopy(data[key]);
+          }
+        }
+        return obj;
+      }
+
+      var new_obj = deepCopy(old_obj);
+      old_obj[4][1] = 99;
+      console.log(new_obj);
+    </script>
+  </body>
+</html>

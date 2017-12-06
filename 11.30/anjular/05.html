@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AnjularJs的表达式</title>
+    <script src="../js/angular.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <!--
+    1.ng-app是一个特殊的指令，一个HTML文档只出现一次，如出现多次也只有第一个起作用；
+      ng-app可以出现在html文档的任何一个元素上。
+    2.ng-app作用：告诉子元素指令是属于angularJs。
+    3.ng-app的值可以为空（练习），项目中一定要赋值，后面所说的模块。
+  -->
+    <div ng-app="" ng-init="person=[0,1,2,3,4]">
+      <p>数组[0,1,2,3,4]的第三个数为:{{ person[2] }}</p>
+      <p>数组[0,1,2,3,4]的第三个数为:<span ng-bind="person[2]"></span></p>
+    </div>
+
+  </body>
+</html>

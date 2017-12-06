@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../js/vue.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{message}}
+    </div>
+
+    <div id="app-2">
+      <span v-bind:title="message">
+        鼠标悬停几秒钟查看此处动态绑定的提示信息！
+      </span>
+    </div>
+
+    <div id="app-3">
+      <p v-if="seen">现在你看到我了</p>
+    </div>
+
+    <div id="app-4">
+      <ul>
+        <li v-for="todo in tools">
+          {{todo.text}}
+        </li>
+      </ul>
+    </div>
+
+    <div id="app-5">
+      <p>{{message}}</p>
+      <button type="button" name="button" v-on:click="reverseMessage">逆转消息</button>
+    </div>
+
+    <div id="app-6">
+      <input type="text" v-model="message">
+      <p>{{message}}</p>
+    </div>
+
+    <h1 v-if="ok">Yes</h1>
+    <h1 v-else>No</h1>
+    {{#if ok}}
+      <h1>Yes</h1>
+    {{/if}}
+
+
+    <script type="text/javascript">
+    // 声明式渲染
+      var app1 = new Vue({
+        el:'#app',
+        data:{
+          message:'Hello Vue'
+        }
+      });
+      // 绑定 DOM 元素属性
+      var app2 = new Vue({
+        el: '#app-2',
+        data: {
+          message: '页面加载于 ' + new Date().toLocaleString()
+        }
+      });
+      // 条件
+      var app3 = new Vue({
+        el: '#app-3',
+        data: {
+          seen: true
+        }
+      });
+      // 循环
+      var app4 = new Vue({
+        el:'#app-4',
+        data:{
+          tools :[
+            {text:"Vue"},
+            {text:'anjular'},
+            {text:'React'}
+          ]
+        }
+      });
+      // 处理用户输入
+      var app5 = new Vue({
+        el:"#app-5",
+        data:{
+          message:"Hello my Vue!"
+        },
+        methods:{
+          reverseMessage:function(){
+            this.message = this.message.split('').reverse().join('');
+          }
+        }
+      });
+      // v-model 指令
+      var app6 = new Vue({
+        el:"#app-6",
+        data:{
+          message:"hello world"
+        }
+      });
+    </script>
+  </body>
+</html>

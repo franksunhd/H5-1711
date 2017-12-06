@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>表单控件</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul li {
+        list-style: none;
+      }
+
+      .main {
+        width: 800px;
+        margin: 50px; auto;
+      }
+
+      .main .left ,
+      .main .right {
+        float: left;
+      }
+
+      .main .left {
+        width: 300px;
+      }
+
+      .main .left ul li {
+        text-align: right;
+      }
+
+      .main .right {
+        width: 500px;
+      }
+
+      .main .right ul li {
+        text-align: left;
+        margin-left: 30px;
+      }
+
+      .main .right ul li input[type=text],
+      .main .right ul li input[type=password] {
+        width: 400px;
+        height: 50px;
+        padding-left: 20px;
+        outline: none;
+      }
+
+      .main ul li {
+        height: 80px;
+        line-height: 80px;
+      }
+
+      .main .right ul li:last-child input{
+        width: 100px;
+        height: 50px;
+        margin-top: 100px;
+      }
+
+      #yz {
+        width: 230px;
+        float: left;
+      }
+
+      #ID {
+        width: 140px;
+        margin-left: 30px;
+        height: 50px;
+        border: 1px solid #ccc;
+        float: left;
+        text-align: center;
+        line-height: 50px;
+        font-size: 30px;
+        color: red;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <form class="" action="#" method="get">
+        <div class="left">
+          <ul>
+            <li>账号/号码:</li>
+            <li>密码:</li>
+            <li>验证码:</li>
+            <li>性别:</li>
+            <li>爱好:</li>
+            <li>选择文件:</li>
+            <li>图片按钮:</li>
+            <li>出生日期:</li>
+            <li>隐藏域:</li>
+            <li>评价:</li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="right">
+          <ul>
+            <li>
+              <input type="text" name="username" placeholder="请输入用户名">
+            </li>
+            <li>
+              <input type="password" name="passwd" placeholder="请输入密码">
+            </li>
+            <li>
+              <input id = "yz" type="text" name="yz" placeholder="请输入验证码" maxlength="4">
+              <div id="ID"></div>
+            </li>
+            <li>
+              男:<input type="radio" name="gender" value="0">
+              女:<input type="radio" name="gender" value="1">
+            </li>
+            <li>
+               <input type="checkbox" name="" value="0">羽毛球
+               <input type="checkbox" name="" value="1">足球
+               <input type="checkbox" name="" value="2">橄榄球
+               <input type="checkbox" name="" value="3"> 排球
+            </li>
+            <li>
+              <input type="file" name="filename" multiple="multiple" accept="image/*">
+            </li>
+            <li>
+              <input type="image" name="imgname" src="./bg.gif">
+            </li>
+            <li>
+              <select class="" name="year">
+                <option value="0">请选择年份</option>
+                <option value="1">1994年</option>
+                <option value="2">1995年</option>
+                <option value="3">1996年</option>
+              </select>
+              <select class="" name="month">
+                <option value="0">请选择月份</option>
+                <option value="1">1月</option>
+                <option value="2">2月</option>
+                <option value="3">3月</option>
+              </select>
+              <select class="" name="day">
+                <option value="0">请选择日期</option>
+                <option value="1">1日</option>
+                <option value="2">2日</option>
+                <option value="3">3日</option>
+              </select>
+            </li>
+            <li>
+              <input type="hidden" name="hide" value="我是隐藏域">
+            </li>
+            <li>
+              <textarea name="textname" rows="8" cols="80"></textarea>
+            </li>
+            <li>
+              <input type="submit" name="submit"></input>
+              <input type="reset" name="reset"></input>
+            </li>
+          </ul>
+        </div>
+      </form>
+    </div>
+
+    <script src="./js/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var a;
+      $('input').focus(function(){
+        a = $(this).attr("placeholder");
+        console.log(a);
+        $(this).attr("placeholder","");
+      }).blur(function(){
+        $(this).attr("placeholder",a);
+      });
+
+      function createId(n) {
+        var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var len =str.length;
+        var index;
+        var color = "";
+        for(var i = 0; i < n; i++){
+          index = Math.floor(Math.random()*len);
+          color += str[index];
+        }
+        // console.log(color);
+        return color;
+      }
+
+      var num = createId(4);
+      document.getElementById('ID').innerHTML = num;
+
+      $('#ID').click(function(){
+        num = createId(4);
+        document.getElementById('ID').innerHTML = num;
+      });
+    </script>
+  </body>
+</html>

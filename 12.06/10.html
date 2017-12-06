@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>自定义构造函数</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    console.log("------自定义构造函数-------");
+      function Person(name,age){
+        Person.name = name;
+        this.age = age;
+        this.sayHello = function(){
+          console.log(name);
+        }
+      }
+
+      var one = new Person('lisi',12);
+      one.sayHello()
+
+      // 原型模式
+      console.log("------原型模式-------");
+      function fun(){
+        this.name = 'this.name'
+      }
+      fun.prototype.name = 'ssy';
+      fun.prototype.age = 12;
+
+      var two = new fun();
+      var three = new fun();
+      console.log(two.name);
+      console.log(three.name);
+      two.name = 'hello';
+      console.log(two.name);
+
+      // 构造函数模式 和 原型模式 结合
+      console.log("------构造函数模式和原型模式结合-------");
+    </script>
+  </body>
+</html>

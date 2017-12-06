@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="button" name="" value="提交">
+
+    <script src="./js/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      // $("input[type=button]").bind("click",ShowMsg);
+      // function ShowMsg(){
+      //   alert("ShowMsg!");
+      // }
+
+      // 绑定函数的 处理顺序 注册函数的顺序是 一致的
+      $("input[type=button]").bind("click",function(){
+        alert("1111");
+      });
+      $("input[type=button]").bind("click",function(){
+        alert("2222");
+      });
+    </script>
+  </body>
+</html>

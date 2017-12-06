@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>li元素的添加和删除</title>
+  </head>
+  <body>
+    <input type="button" name="" value="添加">
+    <input type="button" name="" value="删除">
+    <button type="button" name="button">123</button>
+    <ul>
+
+    </ul>
+    <script src="./js/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+      var add = $("input:first");
+      var del = $("input:last");
+
+      // add.bind("click",function(){
+      //   $("ul").append("<li>li元素</li>");
+      // });
+      //
+      // del.bind("click",function(){
+      //   $("ul li:last").remove();
+      // });
+
+      add.on("click",function(){
+        $("ul").append("<li>li元素</li>");
+      });
+
+      del.on("click",function(){
+        $("ul li:last").remove();
+      });
+
+      // $("button").click(function(){
+      //   alert("123");
+      // });
+      //
+      // $("button").click(function(){
+      //   alert("456");
+      // });
+    </script>
+  </body>
+</html>

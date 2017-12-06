@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>wrapAll()创建一个新的元素 内部插入</title>
+</head>
+<body>
+  <div class="all">
+    <div class="new">1123</div>
+    <div class="new">1123</div>
+    <p>1234567</p>
+    <div class="new">1123</div>
+  </div>
+
+  <span>this is a span tag</span>
+  <p>this is a p tag</p>
+  <span>this is a span tag</span>
+
+  <script src="./js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript">
+  // wrapAll() 是给所有选中的元素添加一次
+    var newElem = $("<div></div>").css('border', '1px solid red');
+    $('.new').wrapAll(newElem);
+
+    $('span').wrapAll('<div><div><p><em><b></b></em></p></div></div>');
+  </script>
+
+</body>
+</html>

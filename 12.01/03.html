@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>事件冒泡</title>
+    <style media="screen">
+      div {
+        width: 500px;
+        height: 500px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 注册事件在div上 点击input[type=button] 也能触发 -->
+    <div id="div">
+      <input id="a" type="button" value="点击1">
+      <input id="b" type="button" value="点击2">
+    </div>
+
+    <script src="./js/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $("div").bind("click",function(){
+        $(this).css("background-color","blue");
+      });
+
+      $("#div").on("click","#a",function(){
+        alert($(this).attr("id"));
+      });
+    </script>
+  </body>
+</html>

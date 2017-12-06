@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>URL()</title>
+    <link rel="icon" href="./bg.gif" type="image/x-icon" sizes="heightxwidth"/>
+  </head>
+  <body>
+    <script src="./js/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var a = new URL("/", "https://developer.mozilla.org");
+      console.log(a);  // https://developer.mozilla.org/
+
+      var b = new URL("https://developer.mozilla.org");
+      console.log(b);    // https://developer.mozilla.org/
+
+      var c = new URL('en-US/docs', b);
+      console.log(c);    // https://developer.mozilla.org/
+
+      var d = new URL('/en-US/docs', b);
+      console.log(d);      //
+
+      var f = new URL('/en-US/docs', d);
+      console.log(f);
+
+      var g = new URL('/en-US/docs', 'https://developer.mozilla.org/fr-FR/toto');
+      console.log(g);
+
+      var h = new URL('/en-US/docs', a);
+      console.log(h);
+      // var i = new URL('/en-US/docs', '');
+      // var j = new URL('/en-US/docs');
+      // console.log(j);
+      var k = new URL('http://www.example.com', 'https://developers.mozilla.com');
+      console.log(k);
+      var l = new URL('http://www.example.com', b);
+      console.log(l);
+
+    </script>
+  </body>
+</html>

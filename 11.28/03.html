@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script src="./js/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    function  fun() {
+    var a = 10;
+    return function(){
+        for (var i = 0; i++; i < 5){
+            a++;
+        }
+        console.log(a);
+      };
+    }
+    var ret = fun();
+    ret(); //调用返回的函数，仍热可以访问fun中定义的局部变量a
+
+    var stu = {};
+    stu.name = "lisi";
+    stu.age = 11;
+    stu.sayHello = function(){alert("Hello! I am" + this.name)};
+
+    </script>
+  </body>
+</html>

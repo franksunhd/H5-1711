@@ -39,12 +39,12 @@ ul li {
 }
 
 .J-event {
-  background-color: #190400;
+  background-color: #AD824D;
 }
 
 .J-event .J-event-bg {
   height: 80px;
-  background: url("../../images/jd/head-bg.jpg") no-repeat;
+  background: url("../../images/jd/title.jpg") no-repeat;
 }
 
 .shortcut {
@@ -90,6 +90,10 @@ ul li {
   border-right: 1px solid #999999;
 }
 
+.rl ul li:last-child {
+  border-right: none;
+}
+
 .rl ul li a {
   font-size: 12px;
 }
@@ -132,7 +136,7 @@ ul li {
   color: #999999;
   line-height: 30px;
   padding-left: 5px;
-  background: url("../../images/jd/xiangji.png") no-repeat right center;
+  background: #fff url("../../images/jd/xiangji.png") no-repeat right center;
 }
 
 .head .search .search-btn {
@@ -146,7 +150,8 @@ ul li {
 }
 
 .head .search .carbox {
-  border: 1px solid #999999;
+  border: 1px solid #CFCFCF;
+  background-color: #fff !important;
   float: left;
   text-align: center;
   line-height: 30px;
@@ -154,6 +159,20 @@ ul li {
   height: 30px;
   margin-left: 56px;
   position: relative;
+}
+
+.head .search .carbox .carhover {
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+  border: 1px solid #cfcfcf;
+  background: #fff;
+  position: absolute;
+  top: 30px;
+  right: -1px;
+  display: none;
 }
 
 .head .search .carbox .car {
@@ -219,7 +238,16 @@ ul li {
 .head .nav .left ul li {
   float: left;
   width: 80px;
+  font-size: 16px;
   text-align: inherit;
+}
+
+.head .nav .left ul li a {
+  color:#555;
+}
+
+.head .nav .left ul li a:hover {
+  color: #c81623;
 }
 
 .center {
@@ -516,20 +544,16 @@ ul li {
 
 .num li {
   float: left;
-  display: inline;
   margin: 3px 5px;
   border-radius: 50%;
   width: 15px;
   height: 15px;
-  background-color: #CCC;
-  color: #000;
-  text-align: center;
+  background-color: #fff;
   cursor: pointer
 }
 
 .num li.cur {
   background-color: #C00;
-  color: #FFF;
 }
 
 /* 京东秒杀*/
@@ -768,11 +792,22 @@ ul li {
   height: 444px;
 }
 
-.fbt .find .f-title {
-  background-color: #4998a1;
+.fbt .f-title {
   color: #fff;
   height: 55px;
   padding: 0 30px 0 20px;
+}
+
+.fbt .f-t {
+  background-color: #4998a1;
+}
+
+.fbt .f-b {
+  background-color: #6B367C;
+}
+
+.fbt .f-p {
+  background-color: #E56804;
 }
 
 .fbt .find .f-title .fcol-1 {
@@ -780,7 +815,7 @@ ul li {
   float: left;
 }
 
-.fbt .find .f-title .fcol-1 h3 {
+.fbt .f-title .fcol-1 h3 {
   font-size: 26px;
   font-weight: 400;
   line-height: 40px;
@@ -789,11 +824,11 @@ ul li {
   float: left;
 }
 
-.fbt .find .f-title .fcol-2 {
+.fbt .f-title .fcol-2 {
   float: right;
 }
 
-.fbt .find .f-title .fcol-2 .box_subtit {
+.fbt  .f-title .fcol-2 .box_subtit {
   position: relative;
   float: right;
   margin-top: 19px;
@@ -804,7 +839,7 @@ ul li {
   color: #fff;
 }
 
-.fbt .find .f-title .fcol-2 .box_subtit i {
+.fbt .f-title .fcol-2 .box_subtit i {
   background: url("../../images/jd/sprite_index.png") no-repeat -154px -40px;
   background-size: 218px 188px;
   width: 15px;
@@ -865,18 +900,108 @@ ul li {
 }
 
 .fbt .buy {
-  background-color: #666;
   margin-right: 10px;
 }
 
-.fbt .tip {
-  background-color: #000;
+.fbt .buy .b-body {
+  background-color: #fff !important;
+  width: 390px;
+  height: 380px;
+  padding-top: 8px;
 }
 
+.fbt .buy .b-body a {
+  display: block;
+  width: 360px;
+  height: 141px;
+  margin: 0 15px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  overflow: hidden;
+  text-align: left;
+}
 
+.fbt .buy .b-body a p {
+  font-size: 14px;
+}
 
+.fbt .buy .b-body .bcol-1 {
+  border-bottom: 1px solid #ccc;
+}
 
+.fbt .tip .p-body {
+  height: 388px;
+  background-color: #fff;
+}
 
+.fbt .tip .p-body > ul {
+  margin: 0px 10px;
+  border-bottom: 1px solid #d2d1d1;
+}
+
+.fbt .tip .p-body > ul li {
+  display: inline-block;
+  *zoom: 1;
+  line-height: 18px;
+  font-size: 14px;
+  width: 70px;
+  border-right: 1px solid #d2d1d1;
+  text-align: center;
+  overflow: hidden;
+  margin-top:8px;
+  margin-bottom: 2px;
+}
+
+.fbt .tip .p-body > ul li:last-child {
+  border-right: none;
+}
+
+.fbt .tip .p-body .p-img {
+  width: 370px;
+  height: 335px;
+  padding: 10px;
+}
+
+.fbt .tip .p-body .p-img ul {
+  height: 100%;
+}
+
+.fbt .tip .p-body .p-img ul li {
+  position: relative;
+  float: left;
+  width: 123px;
+  text-align: center;
+}
+
+.fbt .tip .p-body .p-img ul li a {
+  display: block;
+  *zoom: 1;
+  padding: 12px 0;
+  border-right: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  cursor: pointer;
+}
+
+.fbt .tip .p-body .p-img ul li a.right {
+  border-right: none;
+}
+
+.fbt .tip .p-body .p-img ul li a.bottom {
+  border-bottom: none;
+}
+
+.fbt .tip .p-body .p-img ul li a img {
+  margin-bottom: 10px;
+}
+
+.fbt .tip .p-body .p-img ul li a p {
+  height: 32px;
+  text-align: left;
+  padding: 0 11px;
+  line-height: 16px;
+  overflow: hidden;
+  font-size: 12px;
+}
 
 
 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>createElement</title>
+  </head>
+  <body>
+    <div class="name">this is a div tag!</div>
+    <p class="new"></p>
+    <script src="./js/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $('<span>').appendTo(".name");
+      $('span').text('this is a span tag in div');
+
+      $('.name').append(document.createElement('p'));
+      $('.name p').text('this is a p tag in div');
+
+      $('.name').append("<span>");
+      $('span').text('this is a span tag in div');
+
+      $('.new').text('this is a p tag');
+    </script>
+  </body>
+</html>
