@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>大小写转换</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .main {
+        width: 800px;
+        height: 500px;
+        margin: 50px auto;
+      }
+
+      #h2 {
+        margin-top: 30px;
+      }
+
+      #in {
+        width: 200px;
+        height: 20px;
+        outline: none;
+        padding-left: 10px;
+        padding-right: 10px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <label for="in">输入:</label>
+      <input id="in" type="text" placeholder="请输入文本">
+      <button id="btn" type="button" name="button">转换为大写</button>
+      <h2 id="h2">输出:<span id="out"></span></h2>
+    </div>
+
+    <script type="text/javascript">
+      var ins = document.getElementById('in');
+      var btn = document.getElementById('btn');
+      var out = document.getElementById('out');
+
+      btn.onclick = function(){
+        // 进行大写转换 并输出
+        out.innerHTML = toUpper(ins.value);
+      }
+
+      function toUpper(str) {
+        var result = "" , code;
+
+        for (var i = 0; i < str.length; i++) {
+          // 获得编码
+          code = str.charCodeAt(i);
+
+          if ((code >= 97) && (code <= 122)) {
+            code -= 32;
+
+            result += String.fromCharCode(code);
+          }else {
+            result += str[i];
+          }
+        }
+
+        return result;
+      }
+    </script>
+  </body>
+</html>

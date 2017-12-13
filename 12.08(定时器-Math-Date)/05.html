@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Date对象</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var date = new Date();
+
+      console.log(date.getFullYear() + "年");  //2017年
+      console.log(date.getMonth() + 1 + "月");  // 12月
+      console.log("星期" + date.getDay());    // 星期5
+      console.log(date.getDate() + "日");   // 8日
+      console.log(date.getHours() + "时");  //  11时
+      console.log(date.getMinutes() + "分");  // 6分
+      console.log(date.getSeconds() + "秒");   // 41秒
+      console.log(date.getMilliseconds() + "毫秒");  // 520毫秒
+
+      console.log(date.getTime());  // 1512702401520
+
+      console.log(date);  // Fri Dec 08 2017 11:06:41 GMT+0800 (+08)
+      console.log(date.toLocaleString());   // 2017/12/8 上午11:06:41
+      console.log(date.toDateString());   // Fri Dec 08 2017
+      console.log(date.toTimeString());   // 11:06:41 GMT+0800 (+08)
+      console.log(date.toLocaleDateString());  // 2017/12/8
+      console.log(date.toLocaleTimeString());   // 上午11:06:41
+      console.log(date.toUTCString());   // Fri, 08 Dec 2017 03:06:41 GMT
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>页面</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var title = document.title;
+      console.log(title);
+
+      // 定时修改页面标题
+      var i = 0;
+      function fun() {
+        i++;
+        document.title = title + i;
+        if (i==10) {
+          clearInterval(timer);
+        }
+      }
+
+      var timer = setInterval(fun,1000);
+    </script>
+  </body>
+</html>

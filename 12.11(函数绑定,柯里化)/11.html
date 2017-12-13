@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>offset</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #f {
+        width: 500px;
+        height: 300px;
+        background: red;
+        position: relative;
+      }
+
+      #s1 {
+        width: 200px;
+        height: 150px;
+        background: green;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="btn" type="button" name="" value="测试">
+    <div id="f">
+      <div id="s1"></div>
+    </div>
+
+    <script type="text/javascript">
+      var f = document.getElementById('f');
+      var s1 = document.getElementById('s1');
+      var btn = document.getElementById('btn');
+
+      console.log("offsetWidth = " + s1.offsetWidth);  // 200
+      console.log("offsetHeight = " + s1.offsetHeight);  // 150
+
+      console.log("offsetLeft = " + s1.offsetLeft);  // 30
+      console.log("offsetTop = " + s1.offsetTop);  // 30
+
+      s1.style.left = "20px";
+      s1.style.top = "50px";
+
+      console.log("offsetLeft = " + s1.offsetLeft);
+      console.log("offsetTop = " + s1.offsetTop);
+
+      btn.onclick = function() {
+        var timer = setInterval(function() {
+          s1.style.left = s1.offsetLeft + 10 + "px";
+          if (s1.offsetLeft >= 300) {
+            clearInterval(timer);
+          }
+        },30);
+      }
+    </script>
+  </body>
+</html>

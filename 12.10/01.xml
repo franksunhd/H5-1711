@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<note date="08/08/2017">
+<to>George</to>
+<from>John</from>
+<heading>Reminder</heading>
+<!-- 这是注释 -->
+<body>Don't          forget the meeting!</body>
+</note>

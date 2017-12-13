@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>工厂模式</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var Car = (function() {
+        // 这里上下的 Car 完全不是一回事
+        var Car = function(model,year,miles) {
+          this.model = model;
+          this.year = year;
+          this.miles = miles;
+        };
+
+        // 返回一个匿名函数
+        return function(model,year,miles) {
+          // 实例化 内部的Car
+          return new Car(model,year,miles);
+        };
+      })();
+
+      // 这里的 Car 指的是 外层函数的 Car
+      var tom = new Car("Tom",2017,2000);
+      var dudu = new Car("dudu",2018,5000);
+      console.log(tom.year);  // 2017
+      console.log(dudu.year);  // 2018
+    </script>
+  </body>
+</html>

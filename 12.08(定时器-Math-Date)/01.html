@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>字符串常用方法</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var a = "abcde";
+      // 获取字符串对应索引位置的字符
+      console.log(a.charAt(1));  //b
+      // 获取字符串对应索引位置字符的Unicode编码
+      console.log(a.charCodeAt(1)); // b的ascii 98
+
+      var b = "hello world google"
+      // 返回指定值在字符串对象首次出现的位置
+      console.log(b.indexOf("goo")); //g 的下标值为 12
+
+      var c = "";
+      // 字符串分割函数
+      console.log(c.split("")); // []
+
+      var d = a.concat("hello","world","google");
+      console.log(d);  // abcdehelloworldgoogle
+
+      // slice(begin[,end])
+      // 字符串切片 返回从begin到end的字符串 不包括end
+      var str1 = "The morning is upon us."
+      var str2 = str1.slice(4,-1);  // slice(begin,end-1)
+      console.log(str2); //vmlinuz.old
+
+      // substr(start[,length])
+      // 返回从start开始的长度为length的字符串
+      var stu = "abcdefghij";
+      console.log(stu.substr(1,2)); // bc
+      console.log(stu.substr(-2,2));  // ij
+      console.log(stu.substr(-20,2));  // ab
+      console.log(stu.substr(3)); // defghij
+      console.log(stu.substr(20,2));  //
+
+      // substring(indexStart[,indexEnd])
+      // 功能和slice切片一样
+      var any = "Mozilla";
+
+      console.log(any.substring(3,0));  //Moz
+      console.log(any.substring(0,3));  //Moz
+      console.log(any.length);  // 7
+      console.log(any.substring(0,7)); // Mozilla
+      console.log(any.substring(0,10)); // Mozilla
+
+      // toLowerCase()  toUpperCase()
+      var test = "abc";
+      var test1 = "ABC";
+
+      console.log(test1.toLowerCase());
+      console.log(test.toUpperCase());
+
+      var m = "123 asd";
+      console.log(m.split()); // ["123 asd"]
+      console.log(m.split("")); // ['1','2','3',' ','a','s','d']
+    </script>
+  </body>
+</html>

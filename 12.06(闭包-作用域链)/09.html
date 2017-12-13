@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>创建对象</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // 使用已有类型进行创建
+      var obj = new Object();
+      console.log(obj);
+      var date = new Date();
+      console.log(date);
+      // 使用字面量进行创建
+      var stu = {};
+      stu.name = "lisi";
+      stu.age = 11;
+      stu.sayHello = function(){
+        alert("Hello! I am " + this.name);
+      }
+      stu.sayHello()
+      console.log(stu);
+    </script>
+  </body>
+</html>

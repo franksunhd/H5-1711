@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html> <!-- 根节点 文档元素 每个文档有且仅有一个文档元素-->
+<!-- html页面中只有这一个是文档元素,xml页面中没有预定义的元素,任何元素都可能成为文档元素 -->
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<!--
+  每一段标记都可以通过树中的一个节点表示
+  HTML元素通过 元素节点 表示
+  特性(attribute)通过特性节点表示
+  注释通过注释节点表示
+  文档类型通过文档类型节点表示
+  总共有 12 种节点类型 这些类型都来自一个基类型
+ -->
+    <input id= "btn" type="button" name="" value="点击">
+    <span id="sp"></span>
+    <script type="text/javascript">
+      var btn = document.getElementById('btn');
+
+      btn.onclick = function(){
+        var sp = document.getElementById('sp');
+        sp.innerHTML = sp.ownerDocument.nodeName;
+      }
+      
+    </script>
+  </body>
+</html>

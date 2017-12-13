@@ -37,7 +37,7 @@ fun2();
 function add(a,b){
   for (var k = 0; k < arguments.length; k++) {
     console.log(arguments[k]);
-    console.log(a,b);
+    // console.log(a,b);
   }
   return a + b;
 }

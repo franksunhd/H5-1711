@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>封装函数实现检测是否是质数</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #item {
+        width: 500px;
+        height: 400px;
+        margin: 20px auto;
+        background-color: pink;
+      }
+      #tip {
+        color: red;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+      }
+      h4 {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="item">
+      <p id="tip">请输入1-100之间的数</p>
+      <label for="ins">请输入:</label>
+      <input id="ins" type="text">
+      <button id="btn" type="button" name="button">判断输入的数是否为质数</button>
+      <h4 >您输入的数:<span id="out"></span></h4>
+      <p id="p"></p>
+    </div>
+
+    <script src="./jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var ins = document.getElementById('ins');
+      var btn = document.getElementById('btn');
+      var out = document.getElementById('out');
+      var tip = document.getElementById('tip');
+      var p = document.getElementById('p');
+
+      var str = [];
+      for (var  i = 2; i < 101; i++) {
+        //找 2 ~ i
+        for (var j = 2 ; j < i ; j++) {
+          //i能被j整除
+          if ( i % j == 0 ){
+            break;
+          }
+        }
+
+        if (j == i){
+          str.push(i);
+        }
+      }
+
+      btn.onclick = function() {
+        out.innerHTML = "";
+
+        if (ins.value == "") {
+          tip.innerHTML = "您输入的为空,请重新输入!";
+        } else {
+          try {
+            if (ins.value >= 1 && ins.value <= 100) {
+              for (var i = 0 , len = str.length; i < len; i++) {
+                if (ins.value == str[i]) {
+                  out.innerHTML = ins.value + "是质数";
+                } else {
+                  out.innerHTML = ins.value + "不是质数";
+                }
+              }
+              p.innerHTML = "100以内质数有:";
+              for (var j = 0,k = str.length; j < k; j++) {
+                $('#p').append("<span> "+ str[j] + " </span>");
+              }
+            } else if (ins.value < 1) {
+              tip.innerHTML = "您输入的数小于1,请重新输入";
+            } else if (ins.value > 100) {
+              tip.innerHTML = "您输入的数大于100,请重新输入";
+            } else {
+              tip.innerHTML = "你输入的有误,请重新输入";
+            }
+          } catch (err) {
+          tip.innerHTML = "异常退出."
+          }
+        }
+
+        ins.value = "";
+        // tip.innerHTML = "请输入1-100之间的数";
+      }
+    </script>
+  </body>
+</html>

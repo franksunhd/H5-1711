@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JSON序列化</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      console.log("-----------JSON 序列化------------");
+      var stu = {
+        name: "franksun",
+        age: 23,
+        score: 100,
+        gender: "famale",
+        "hobby": ["read", "drink", "eat"]
+      }
+
+      var str = JSON.stringify(stu,function(key,value) {
+        if (key == "age") {
+          return value + 5;
+        }
+        if (key === "score") {
+          return value - 10;
+        }
+
+        return value;
+      });
+      console.log(str);
+
+      var item = JSON.stringify(stu,['name','age','score']);
+      console.log(item);
+
+      console.log("-----------JSON 反序列化------------");
+
+      console.log(JSON.parse(str));
+    </script>
+  </body>
+</html>

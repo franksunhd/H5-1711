@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>函数缓存  函数记忆</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+        函数缓存:
+      */
+
+      // 判断是否是偶数
+      // 充分利用了 函数可自定义属性的特点！！！
+      function isEven(num) {
+
+        // 第一次调用该函数 没有result属性，所以添加一个result属性
+        if (!isEven.result) {
+          // result非空执行
+          isEven.result = {}
+        }
+
+        // 每次都试图从已有结果中查找
+        if (isEven.result[num] != undefined) {
+          // 如果找到 则返回
+          return isEven.result[num];
+        }
+
+        // 如果没有结果，则需要重新计算
+        console.log("-----重新计算------");
+
+        var temp = (num % 2 === 0 );  // 返回的是true or false
+
+        // 计算之后 保存计算结果
+        return isEven.result[num] = temp;
+      }
+
+      console.log(isEven(2));  //重新计算 true
+      console.log(isEven(3));  // 重新计算 false
+      console.log(isEven(2));  // true
+      console.log(isEven(3));  // false
+    </script>
+  </body>
+</html>

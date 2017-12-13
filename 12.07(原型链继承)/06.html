@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>构造函数的继承</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Super(name) {
+        this.name = name;
+        // this 指定的执行环境为 Sub
+        console.log(this);   // Sub{}
+        console.log(this.name);  // lisi
+      }
+
+      function Sub(name,age) {
+        Super.call(this,name);  //调用父类构造函数
+        this.age = age;
+      }
+
+      var one = new Sub('lisi',10);
+      console.log(one.name);  // lisi
+      console.log(one.age);   // 10
+    </script>
+  </body>
+</html>

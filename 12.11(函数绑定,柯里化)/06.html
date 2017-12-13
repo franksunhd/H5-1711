@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>定时器节流</title>
+
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      table{
+        border: 1px solid red;
+        border-collapse: collapse;
+      }
+
+      tr,td,th {
+        border: 1px solid red;
+      }
+
+      th,td {
+        width: 200px;
+        height: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="btn1" type="button" name="" value="点击生成表格">
+    <table>
+      <tbody id="item"></tbody>
+    </table>
+    <ul id="str">
+
+    </ul>
+    <script type="text/javascript">
+      var btn = document.getElementById('btn1');
+      var tb = document.getElementById('item');
+      var str = document.getElementById('str');
+
+      var count = 0,timer;
+      function createTable() {
+        count++;
+        if (count > 1000) {
+          clearTimeout();
+          return;
+        }
+
+        for (var i = 0; i < 5; i++) {
+          // var content = "<tr><td>lisi</td><td>22</td><td>男</td></tr>";
+          var content = "<li>aaaaa</li>";
+          // tb.innerHTML += content;
+          str.innerHTML += content;
+        }
+
+        timer = setTimeout(createTable,0);
+        console.log(count);
+      }
+
+      document.onclick = function() {
+        alert("点击了document");
+      }
+      btn.onclick = function(event) {
+        event.stopPropagation(); // 阻止事件传递 DOM0级
+
+        createTable();
+
+
+        /*
+        for (var i = 0; i < 5000; i++) {
+          var content = "<tr><td>lisi</td><td>22</td><td>男</td></tr>";
+          tb.innerHTML += content;
+        }
+        */
+      }
+    </script>
+  </body>
+</html>

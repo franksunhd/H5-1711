@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>作用域和作用域链</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var name = "The Window";
+      var object = {
+        name : "My object",
+        getNameFunc : function(){
+          // 下面这个匿名函数是 闭包
+          return function(){
+            var name = "ssy";
+            console.log(this);
+            return this.name;
+          }
+        }
+      }
+
+      var first = object.getNameFunc();
+      var s = first();
+      alert(s);
+
+      // 等价于
+      // alert(object.getNameFunc()());
+
+
+      /*
+        this 指向的 永远只可能是对象
+        this 指向谁 永远不取决于this写在哪!,而是取决于函数在哪调用
+        this 指向的对象,我们称之为函数的上下文context,也叫函数的调用者.
+      */
+    </script>
+  </body>
+</html>

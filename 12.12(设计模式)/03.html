@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>单例对象的应用</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // 单例模式主要用于在系统间各种模式的通信协调上
+    var SingletonTester = (function() {
+      // 参数:传递给单例的一个参数集合
+      function Singleton(args) {
+        // 设置args变量为接收的参数或者为空(对应没有提供的情况)
+        var args = args || {};
+        // 设置name 参数
+        this.name = "SingletonTester";
+        // 设置pointX的值
+        this.pointX = args.pointX || 6;
+        // 设置pointY的值
+        this.pointY = args.pointY || 10;
+      }
+
+      // 实例容器
+      var instance;
+      var _static = {
+        name:"Ssy",
+
+        // 获得实例的方法
+        // 返回SingletonTester
+        getInstance:function(args) {
+          if (instance === undefined) {
+            instance = new Singleton(args);
+          }
+          return instance;
+        }
+      }
+
+      return _static;
+    })();
+
+    var singletonTester = SingletonTester.getInstance();
+    console.log(singletonTester.name);  // SingletonTester
+    console.log(singletonTester.pointX);  // 6
+    console.log(singletonTester.pointY);  // 10
+    </script>
+  </body>
+</html>

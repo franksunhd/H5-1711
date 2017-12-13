@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>工厂函数的应用</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var page = page || {};
+      page.dom = page.dom || {};
+
+      // 子函数1: 处理文本
+      page.dom.Text = function() {
+        this.insert = function(where) {
+          var txt = document.createTextNode(this.text);
+          where.appendChild(txt);
+        };
+      };
+      // 子函数2: 处理link
+      page.dom.Link = function() {
+        this.insert = function(where,value) {
+          var link = document.createElement('a');
+          link.href = this.url;
+          link.appendChild(document.createTextNode(this.value));
+          where.appendChild(link);
+        };
+      };
+      // 子函数3: 处理img
+      page.dom.Img = function() {
+        this.insert = function(where) {
+          var image = document.createElement('img');
+          image.src = this.url;
+          where.appendChild(image);
+        };
+      };
+
+      // 工厂函数
+      page.dom.factory = function(type) {
+        return new page.dom[type];
+      };
+
+      var x = page.dom.factory('Link');
+      x.url = "http://www.baidu.com";
+      x.value = "百度一下";
+      x.insert(document.body);
+
+      x = page.dom.factory('Text');
+      x.text = "天下第一";
+      x.insert(document.body);
+
+      x = page.dom.factory('Img');
+      x.url = "./1.jpg" ;
+      x.insert(document.body);
+    </script>
+  </body>
+</html>

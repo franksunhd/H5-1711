@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>scroll</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 3000px;
+        height: 3000px;
+      }
+
+      #btn {
+        position: fixed;
+        bottom: 100px;
+        right: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn" type="button" name="button">回到顶部</button>
+    <input type="text" name="" value="123456789">
+    <script type="text/javascript">
+      var btn = document.getElementById('btn');
+
+      btn.onclick = function() {
+        document.documentElement.scrollTop = 0;
+        document.documentElement.scrollLeft = 0;
+      }
+
+      // 获得实际内容的宽和高
+      console.log(document.documentElement.scrollWidth);  // 3000
+      console.log(document.body.scrollWidth);  // 3000
+
+      // 设置滚动条的滚动位置 ,scrollLeft scrollTop 是可读可写的
+      document.documentElement.scrollLeft = 100;
+      document.documentElement.scrollTop = 100;
+
+      // 获得隐藏内容 (水平,垂直)
+      console.log(document.documentElement.scrollTop); // 0
+      console.log(document.documentElement.scrollLeft);  // 0
+    </script>
+  </body>
+</html>

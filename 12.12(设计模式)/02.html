@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>惰性 创建的单例对象</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var MyNameSpace = {};
+      MyNameSpace.singleton = (function(){
+        var exist = null;
+        function Singleton() {
+          var privateA = 10;
+          var privateB = 20;
+
+          function privateFn1(value) {
+            privateA = value;
+          }
+
+          function privateFn2() {
+            return privateA;
+          }
+
+          return {
+            publicA:30,
+            publicB:40,
+            setPrivateA:function(value) {
+              privateFn1(value);
+            },
+            getPrivateA:function() {
+              return privateFn2();
+            }
+          };
+        }
+
+        return {
+          // 该方法就是惰性创建单例对象的特点
+          getInstrance:function() {
+            if (!exist) {
+              exist = Singleton();
+            }
+            return exist;
+          }
+        }
+      })();
+
+      MyNameSpace.singleton.getInstrance().setPrivateA(15);  
+      var single = MyNameSpace.singleton.getInstrance().getPrivateA();
+      console.log(single);  // 15
+    </script>
+  </body>
+</html>

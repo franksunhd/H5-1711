@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>原型链继承的缺点</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Super(){
+        this.colors = ['red','green','blue'];
+      }
+
+      function Sub() {
+      }
+
+      Sub.prototype = new Super();
+
+      /*
+        所有实例共享属性,修改任意一个都会影响所有实例
+        在创建实例时无法传递参数
+      */
+
+      var one = new Sub();
+      console.log(one.colors);
+
+      one.colors.push("pink");
+
+      var two = new Sub();
+      console.log(two.colors);
+    </script>
+  </body>
+</html>

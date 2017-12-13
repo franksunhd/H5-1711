@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>双十二倒计时</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+     #div {
+       width: 800px;
+       height: 100px;
+       background-color: #FE9F7B;
+       line-height: 100px;
+       font-size: 30px;
+       text-align: center;
+       margin: 50px auto;
+     }
+    </style>
+  </head>
+  <body>
+    <div id="div"></div>
+    <script type="text/javascript">
+      var box = document.getElementById('div');
+      var end = new Date('2017-12-12 12:12:12');
+      var timer;
+
+      function fun() {
+        var now = new Date();
+        var secs = parseInt((end.getTime() - now.getTime())/1000);
+
+        function flag(arg) {
+          return arg > 9 ? arg : "0" + arg;
+        }
+
+        var days = parseInt(secs / 3600 / 24);
+        var hour = parseInt(secs / 3600 % 24);
+        var minu = parseInt(secs / 60 % 60);
+        var sec = parseInt(secs % 60);
+
+        box.innerHTML = "距离双十二抢购还有" + flag(days) + "天" + flag(hour) + "时" + flag(minu) + "分" + flag(sec) + "秒";
+      }
+
+      timer = setInterval(fun,1000);
+    </script>
+  </body>
+</html>

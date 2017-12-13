@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>原型链继承</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 构造函数 Animal
+      function Animal(name){
+        this.name = name;
+      }
+
+      // 构造函数Animal原型上定义了一个方法,并且Animal的实例会继承该方法
+      Animal.prototype.getPlanet = function() {
+        return this.planet;
+      }
+
+      // 构造函数Person
+
+      function Person(name){
+        this.name = name;
+      }
+
+      /*
+        Person的原型用Animal的实例进行赋值,(实例A)
+        Person的原型 (构造函数原型B)就有了Animal(实例A)的一切属性和方法
+        Animal实例(实例A)的属性和方法都是继承自Animal构造函数和原型的属性和方法
+      */
+      Person.prototype = new Animal("earth");
+
+      // Person的原型添加自己的一个新方法 getName
+      Person.prototype.getName = function() {
+        return this.name;
+      }
+
+      /*
+      person 是Person构造函数的实例,继承了Person原型上的新增方法
+      又有Animal实例继承自Animal原型上的属性和方法
+      person 实例也可以作为值, 赋给别的构造函数的原型,供其实例进行继承,这样做就会变成了一个链式继承,这就是原型链继承
+      */
+
+      var person = new Person('ssy');
+      // 判断 person 是否是 Person构造函数的原型
+      console.log(person instanceof Person);   // true
+
+      // console.log(Animal.isPrototypeof(Person.prototype));
+
+      console.log(person);   // Person{}
+
+      var p = person.getPlanet();
+      console.log(p);  // undefined
+
+    </script>
+  </body>
+</html>

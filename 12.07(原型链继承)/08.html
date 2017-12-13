@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>借用构造函数继承</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Person(name,age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      Person.prototype.sayHello = function() {
+        console.log('say Hello!');
+      }
+
+      function Student(name,age,score) {
+        // 借用构造函数
+        Person.call(this, name,age);
+        this.score = score;
+      }
+
+      var one = new Student('lisi',20,88);
+      // 借用构造函数的缺点就是 只能继承构造函数的属性和方法
+      // 无法继承构造函数原型上的属性和方法
+      // 也就是 sayHello 没有被调用
+      console.log(one);  // Student{}
+      one.sayHello(); // one.sayHello is not a function
+    </script>
+  </body>
+</html>

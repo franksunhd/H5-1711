@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>工厂模式</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var productManager = {};
+
+      // 子函数
+      productManager.createProductA = function() {
+        console.log("ProductA");
+      }
+
+      productManager.createProductB = function() {
+        console.log("ProductB");
+      }
+      // 工厂函数
+      productManager.factory = function(type) {
+        return new productManager[type];
+      }
+
+      productManager.factory("createProductA");  // ProductA
+      productManager.factory("createProductB");  // ProductB
+    </script>
+  </body>
+</html>

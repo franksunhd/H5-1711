@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>距双十二倒计时</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #item {
+        width: 1000px;
+        height: 100px;
+        font-size: 50px;
+        text-align: center;
+        line-height: 100px;
+        margin: 50px auto;
+        background-color: #FE9F7B;
+      }
+    </style>
+  </head>
+  <body>
+    <div id = "item"></div>
+
+    <script src="./jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var item = document.getElementById("item");
+      var end = new Date("2017-12-12 12:12:12");
+      var timer = null ;
+
+      function flag(arg) {
+        return arg > 9 ? arg : '0' + arg;
+      }
+
+      function getTime() {
+        var now = new Date;
+        var secs = Math.floor((end.getTime()-now.getTime())/1000);
+        // var secs = parseInt((end.getTime()-now.getTime())/1000);
+
+        if (secs == 0) {
+          clearInterval(timer);
+          return;
+        }
+
+        var days = parseInt(secs / 3600 / 24);
+        var hours = parseInt(secs / 3600 % 24);
+        var minutes = parseInt(secs / 60 % 60);
+        var seconds = parseInt(secs % 60);
+
+        item.innerHTML = "距离双十二倒计时还有" + flag(days) + "天" + flag(hours) + "时" + flag(minutes) + "分" + flag(seconds) + "秒";
+      }
+
+      timer = setInterval(getTime,1000);
+    </script>
+  </body>
+</html>

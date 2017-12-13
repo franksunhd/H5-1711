@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>闭包的优点</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    /*
+    闭包优点：
+    1. 实现变量的私有化，减少全局变量的定义
+    2. 动态生成数据(根据参数变化)
+    */
+    function fun() {
+      //计数功能
+      var count = 0;
+
+      function addCount() {
+        count++;
+      }
+
+      function minCount() {
+        count--;
+      }
+
+      function getCount() {
+        return count;
+      }
+
+      return [addCount, minCount, getCount];
+    }
+
+    var result = fun();
+    // var add = result[0];
+    // var min = result[1];
+    // var get = result[2];
+    //
+    // add();
+    // min();
+    // console.log(get());
+
+    // 等价于
+    result[0]();    // add
+    result[1]();    // min
+    console.log(result[2]());
+    </script>
+  </body>
+</html>

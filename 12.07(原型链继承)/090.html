@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>组合继承 (原型链继承 + 借用构造函数继承)</title>
+    <link rel="icon" href="./favicon.ico" type="image/ico">
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Super(name) {
+        this.name = name;
+        this.colors = ['red','green'];
+      }
+
+      Super.prototype.getName = function() {
+        return this.name;
+      }
+
+      function Sub(name,age) {
+        Super.call(this,name);
+        this.age = age;
+      }
+
+      Sub.prototype = new Super();
+      Sub.prototype.constructor = Sub;
+
+      Sub.prototype.getAge = function(){
+        return this.age;
+      }
+
+      var one = new Sub('lisi',10);
+      console.log(one.getName());  // lisi
+      console.log(one.getAge());   // 10
+
+      one.colors.push('blue');
+
+      var two = new Sub('ssy',32);
+      console.log(two.getName());  // ssy
+      console.log(two.getAge());   // 32
+      console.log(two.colors);   // ['red','green']
+    </script>
+  </body>
+</html>

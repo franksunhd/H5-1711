@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>函数柯里化</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function count(rate,price) {
+        return console.log(price + " * " + rate + " = " + price*rate);
+      }
+
+      var newCount = count.bind(null,0.95);
+
+      newCount(1000); // 950
+      newCount(100);  // 95
+      newCount(20); // 19
+    </script>
+  </body>
+</html>

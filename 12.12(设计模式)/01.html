@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>单例模式的实现</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // 方法一 : 使用字面量创建一个简单的单例对象
+      var obj = {
+        name : "lisi",
+        age : 23,
+        score : 89,
+        eat : function() {
+          console.log("-----eat-----");
+        },
+        drink :function() {
+          console.log("----drink----");
+        }
+      }
+
+      // 方法二: 使用闭包在其内部封装私有成员和方法
+      var mySingleton = function() {
+        // 这里声明私有变量和私有方法
+        var privateA = "hello world";
+        function showHello() {
+          console.log(privateA);
+        }
+        // 返回公有变量和方法
+        return {
+          publicMethod:function() {
+            showHello();
+          },
+          publicVar : "ssy"
+        };
+      };
+
+      var single = mySingleton();
+      single.publicMethod();  // hello world
+      console.log(single.publicVar); // ssy
+
+      // 方法三 : 惰性创建单例对象
+
+      var mySingletons = (function() {
+        var instantiated;
+        function init() {
+          // 这里定义单例代码
+          return {
+            publicMethod:function() {
+              console.log("hello world!");
+            },
+            publicProperty:"test"
+          };
+        }
+
+        return {
+          // 静态方法
+          getInstance: function() {
+            if (!instantiated) {
+              instantiated = init();
+            }
+            return instantiated;
+          }
+        };
+      })();
+
+      mySingletons.getInstance().publicMethod(); // hello world!
+      var property = mySingletons.getInstance().publicProperty;
+      console.log(property); // test
+    </script>
+  </body>
+</html>

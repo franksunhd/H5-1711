@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>函数绑定</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function handler(arg1,arg2) {
+        console.log(arg1,arg2);
+        console.log(arguments);
+      }
+
+      /*
+        其中的参数, 100 和 1000 相当于提前给fun1传递了参数
+        在调用fun1时传入的参数会紧跟其后，作为额外的参数.
+      */
+      var fun1 = handler.bind(null,100,1000);
+
+      fun1(); // 100 1000 arguments[2] ==> 100 1000
+      fun1(20,30); // 100 1000 arguments[4] ==> 100 1000 20 30
+
+      /*
+        bind功能: 一个函数可以bind任意次数，想bind到哪个this都行
+        1. 绑定this
+        2. 提前传入参数
+      */
+
+      var fun2 = handler.bind(null,195,200);
+      fun2();  // 195 200 arguments[2] ==> 195 200
+      fun2(222,333);  // 195 200 arguments[4] ==> 195 200 222 333
+    </script>
+  </body>
+</html>

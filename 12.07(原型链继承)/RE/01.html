@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>正则表达式</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var pattern = /\d{3,10}/;
+      console.log(pattern);
+
+      var pattern1 = /test/g;
+      console.log(pattern1);
+
+      var pattern2 = new RegExp(/hello/,'g');
+      console.log(pattern2);
+
+      var pattern3 = new RegExp('/hello/','g');
+      console.log(pattern3);
+
+      var s = "hello world google";
+      console.log(/hello/g.test(s));  //true
+      console.log(/me/g.test(s));     // false
+
+      console.log(/[a-z]/.test(s));   // true
+      console.log(/[A-Z]/.test(s));   // false
+
+      // exec
+      var re = /quick\s(brown).+?(jumps)/ig;
+      var result = re.exec('The Quick Brown Fox Jump Over The Lazy Dog');
+
+      console.log(result);
+
+      // replace
+      var s ="Hello World world hello";
+      var s1 = s.replace(/hello/,"apple");
+      console.log(s1);
+
+      s1 = s.replace(/world/,"my");
+      console.log(s1);
+
+      s1 = s.replace(/world/ig,"ssy");
+      console.log(s1);
+    </script>
+  </body>
+</html>

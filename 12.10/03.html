@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>判断手势</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var startX ,endX,startY,endY;
+
+      document.addEventListener('touchstart',Start,false);
+      document.addEventListener('touchend',End,false);
+
+      function Start(event) {
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+      }
+
+      function End(event) {
+        endX = event.changedTouches[0].clientX;
+        endY = event.changedTouches[0].clientY;
+
+        // 判断手势，通过差值
+        var tempX = endX - startX;
+        var tempY = endY - startY;
+
+        // Math.abs(value);  绝对值
+
+        if (Math.abs(tempX) >= Math.abs(tempY)) {
+          // 水平移动距离 大于 垂直移动距离  认为是水平移动
+          if(tempX > 0){
+            console.log("手势向右滑动");
+          }else {
+            console.log("手势向左滑动");
+          }
+        } else {
+          // 水平移动距离 小于 垂直移动距离  认为是垂直移动
+          if(tempY > 0){
+            console.log("手势向下滑动");
+          }else {
+            console.log("手势向上移动");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

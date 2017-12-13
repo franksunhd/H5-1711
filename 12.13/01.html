@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>智能表单</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      input {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- novalidate控制是否进行数据校验，默认是开启的 -->
+    <!-- autocomplete决定了 是否开启自动完成的功能  -->
+    <form action="#" method="get" autocomplete="off">
+      正则表达式校验:<input id="text" type="text" pattern="\d"> <br><br>
+      <!-- pattern是正则表达式，可以用于进行校验  -->
+      email: <input type="email" name="email" placeholder="请输入邮箱" list="emails"><br>
+
+      <!-- datalist用于给input提供预定义的选项
+        list的属性值必须为datalist的id
+     -->
+      <datalist id="emails">
+        <option >xxx@yyy.com</option>
+        <option >yyy@zzz.com</option>
+        <option >zzz@aaa.com</option>
+      </datalist>
+      <br>
+      <!-- required 属于bool 属性 直接写名字就行 -->
+      url: <input type="url" name="url" required="true"> <br> <br>
+
+      number: <input type="number" name="number" min="20" max="100" step="2"> <br> <br>
+
+      range: <input type="range" name="range" value="0" min="0" max="100" step="10"> <br> <br>
+
+      <!-- autofocus 自动获得焦点 -->
+      search: <input type="search" name="search" autofocus required> <br><br>
+
+      <!-- 日期具有兼容性问题，尽量少用  -->
+      date: <input type="date"> <br><br>
+      month: <input type="month"> <br> <br>
+      week: <input type="week"> <br> <br>
+      time: <input type="time"> <br> <br>
+
+      <!-- multiple 是文件多选 -->
+      <input type="file" name="files" multiple> <br><br>
+
+      <!-- 提交按钮 -->
+      <input type="submit" name="" value="提交">
+    </form>
+  </body>
+  </html>

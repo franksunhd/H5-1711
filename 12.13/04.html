@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>自定义属性</title>
+  </head>
+  <body>
+    <div id="item" name="name" data-name="lisi" data-age="23" data-gender="male" data-score="90" data-abc-ef="abc-ef"></div>
+    <script type="text/javascript">
+      var Obox = document.querySelector("#item");
+      var box = document.getElementById("item");
+
+      box.setAttribute("name","huahua");
+      box.setAttribute("title","titles");
+
+      console.log(box.getAttribute("title"));
+      console.log(box.getAttribute("name"));
+
+      console.log(Obox.dataset);
+      console.log(Obox.dataset.name);
+      console.log(Obox.dataset.age);
+      console.log(Obox.dataset.gender);
+      console.log(Obox.dataset.score);
+      console.log(Obox.dataset.abcEf);
+
+      Obox.dataset.name = "孙思研";
+      Obox.dataset.ade = "21";
+    </script>
+  </body>
+</html>

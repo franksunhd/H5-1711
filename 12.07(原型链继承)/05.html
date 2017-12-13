@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>call apply</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var name = 'global';  // window.name
+      function fun(arg1,arg2) {
+        console.log("this = " , this);
+        console.log("this.name = ",this.name);
+        console.log("arg1 = ", arg1);
+        console.log("arg2 = ", arg2);
+      }
+
+      fun();
+      //  window  global undefined undefined
+      console.log('-----------间接调用-----------');
+
+      var obj1 = {
+        name:'ssy',
+        age : 12
+      }
+
+      var obj2 = {
+        name : "lisi",
+        age : 23
+      }
+
+      /*
+        call 方法的功能:在一个指定的this上调用函数,其实就是将函数内部的this指向搞清楚
+        call 方法从第二个参数开始的参数,都是传递给函数的参数!!!
+      */
+
+      fun.call(obj1,10,20);
+      fun.call(obj2,30,23);
+      fun.call(null,10,20);
+
+
+      console.log('-----------apply-----------');
+
+      /*
+        apply:功能和call一模一样
+        区别:最多接受两个参数,给函数传参使用的是数组,
+      */
+      fun.apply(obj, [10,20]);
+    </script>
+  </body>
+</html>

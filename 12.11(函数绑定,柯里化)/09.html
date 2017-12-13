@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>控制台</title>
+  </head>
+  <body>
+    <div id="svenInfo">
+      <p>site:https:svend.cc</p>
+      <p>github:https://github.com/1234</p>
+      <p>sun_si_yan@163.com</p>
+    </div>
+    <script type="text/javascript">
+      // 控制台打印日志
+      console.log('log');
+      console.info('info');
+      console.debug('debug');
+      // console.error('error');
+      // console.warn('warn');
+
+      // 打印方法中的占位符
+      console.log('%s 买了%d个西瓜,花了%f元钱.','小明',2,21.5);
+
+      // 控制台分组打印
+      console.group('第一组');
+      console.log('第一组-1');
+      console.log('第一组-2');
+      console.groupEnd();
+
+      console.group('第二组');
+      console.log('第二组-1');
+      console.log('第二组-2');
+      console.groupEnd();
+
+      var svendInfo = {
+        site:"http:svend.cc",
+        github:"https://github.com/JSW5297",
+        email:"jinshouw@163.com",
+        sayHi:function(name){
+          console.log('Hello '+ name);
+        }
+      };
+      // 控制台打印对象信息
+      console.dir(svendInfo);
+
+      // 控制台打印DOM节点或XML
+      var svendInfo = document.getElementById('svendInfo');
+      console.dirxml(svendInfo);
+
+      // 判断表达式是否为真
+      console.assert(true);
+      console.assert(1);
+      console.assert(true == false);
+
+      // 将数据表格打印
+      var data = [
+        {'索引':'1','名称':'蛋糕','数量':5},
+        {'索引':'2','名称':'啤酒','数量':2}
+      ];
+      console.table(data);
+
+      // 计时
+      console.time('time-1');
+      for (let i = 0; i < 5; i++) {
+        console.log(i);
+      }
+      console.timeEnd('time-1');
+
+      // 清空控制台
+      // console.clear();
+
+      // 输出样式
+      console.log('%cHello World!', 'font-size:50px; color:green;')
+
+      function All(){
+        for(var i=0;i<10;i++){
+          funcA(2);
+          console.log('----------');
+        }
+        funcB(20);
+      }
+
+      function funcA(count){
+        for(var i=0;i<count;i++){
+          console.log(i);
+        }
+      }
+
+      function funcB(count){
+        for(var i=0;i<count;i++){
+          console.log(i);
+        }
+      }
+
+      console.profile('性能分析器');
+      All();
+      console.profileEnd('性能分析器');
+    </script>
+  </body>
+</html>

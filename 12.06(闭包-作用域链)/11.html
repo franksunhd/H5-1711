@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var name = 'html name';
+    function Person(){
+      this.name = 'this.name'
+    }
+
+    Person.prototype.name = 'ssy';
+    Person.prototype.age = 12;
+
+    var one = new Person();
+    var two = new Person();
+    two.name = 'hello';
+
+    console.log(one.name);
+    /*
+      查找顺序: 全局作用域  函数作用域  原型
+    */
+    console.log(two.name);
+
+    </script>
+  </body>
+</html>

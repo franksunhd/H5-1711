@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Math对象</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      console.log(Math.max(1,2,3,4,5,6));  // 6
+      console.log(Math.min(1,2,3,4,5,6));  // 1
+
+      var nums = [1,2,3,45,67,89];
+      var d = Math.max.apply(Math,nums);
+      console.log(d);  // 89
+
+      console.log(Math.ceil(2.3));  // 向上取整 3
+      console.log(Math.floor(8.9));  // 向下取整 8
+      console.log(Math.round(25.1)); // 四舍五入 25
+      console.log(Math.round(25.5)); // 26
+
+      console.log(Math.random());  // (0,1) 随机数
+    </script>
+  </body>
+</html>
