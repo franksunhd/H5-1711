@@ -14,12 +14,11 @@
       var p;
       $('h3').click(function(){
         if(p){
-          p.appendTo('h3');
+          p.insertAfter('h3');
           p = null;
         }else {
           p = $('p').detach();
-          console.log(p);
-          console.log(typeof p);
+          console.log(p,typeof p);
         }
       });
     </script>
