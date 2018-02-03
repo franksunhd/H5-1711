@@ -17,11 +17,11 @@
           //以","为分隔符，将colorValue字符串分割为字符数组["0","1",...,"f"]
           var colorArray = colorValue.split(",");
 
-          for(var i = 0; i < colorArray.length; i++)
+          for(var i = 0; i < 6; i++)
           {
-            color = colorArray[i];
-            console.log(color);
+            color += colorArray[Math.floor(Math.random()*16)]
           }
+          console.log(color);
 
         });
       });
